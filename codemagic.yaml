@@ -120,7 +120,7 @@ workflows:
           EOF
       - name: Install yarn dependencies
         script: |
-          yarn install
+          npm run git:update && yarn install
       - name: Install CocoaPods dependencies
         script: |
           cd ios && pod install
