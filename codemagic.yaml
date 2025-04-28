@@ -124,7 +124,7 @@ workflows:
           npm run git:update && yarn install
       - name: Install CocoaPods dependencies
         script: |
-          rm -rf Pods && cd ios && pod install
+         cd ios && pod install
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles --warn-only
