@@ -1,0 +1,141 @@
+# Check out https://docs.codemagic.io/yaml/building-a-react-native-app/ for more information
+# Please review and update values
+
+workflows:
+  react-native-android:
+    name: React Native Android
+    max_build_duration: 120
+    instance_type: linux
+    environment:
+      android_signing:
+        - dokwallet_keystore
+      groups:
+        - google_play_vars # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS <-- Put your google-services.json)
+        - common # common env variables
+      vars:
+        PACKAGE_NAME: "com.coinswallet" # <-- Put your package name here e.g. com.domain.myapp
+      node: 20
+    scripts:
+      - name: Generate .env file
+        script: |
+          cat >> .env <<EOF
+          ETHERSCAN_API_KEY_1=$ETHERSCAN_API_KEY_1
+          ETHERSCAN_API_KEY_2=$ETHERSCAN_API_KEY_2
+          TRON_API_KEY_1=$TRON_API_KEY_1
+          TRON_API_KEY_2=$TRON_API_KEY_2
+          TRON_SCAN_API_KEY=$TRON_SCAN_API_KEY
+          BLOCK_CYPHER_API_KEY=$BLOCK_CYPHER_API_KEY
+          DOK_WALLET_BASE_URL=$DOK_WALLET_BASE_URL
+          COIN_MARKET_CAP_API_KEY_1=$COIN_MARKET_CAP_API_KEY_1
+          COIN_MARKET_CAP_API_KEY_2=$COIN_MARKET_CAP_API_KEY_2
+          COIN_MARKET_CAP_API_KEY_3=$COIN_MARKET_CAP_API_KEY_3
+          COIN_MARKET_CAP_API_KEY_4=$COIN_MARKET_CAP_API_KEY_4
+          MORALIS_API_KEY=$MORALIS_API_KEY
+          TON_SCAN_API_KEY=$TON_SCAN_API_KEY
+          ETHEREUM_POW_SCAN_API_KEY=$ETHEREUM_POW_SCAN_API_KEY
+          POLKADOT_SCAN_API_KEY=$POLKADOT_SCAN_API_KEY
+          COSMOS_API_KEY=$COSMOS_API_KEY
+          SOLANA_RPC_KEY=$SOLANA_RPC_KEY
+          BUGFENDER_APP_KEY=$BUGFENDER_APP_KEY
+          REDUX_KEYCHAIN_NAME=$REDUX_KEYCHAIN_NAME
+          REDUX_SHARED_PREFERENCE_NAME=$REDUX_SHARED_PREFERENCE_NAME
+          REDUX_KEY=$REDUX_KEY
+          BLOCKDAEMON_API_KEY=$BLOCKDAEMON_API_KEY
+          WALLET_CONNECT_ID=$WALLET_CONNECT_ID
+          BLOCKFROST_API_KEY=$BLOCKFROST_API_KEY
+          EOF
+      - name: Install yarn dependencies
+        script: |
+          npm run git:update && yarn install
+      - name: Set Android SDK location
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Build Android release
+        script: |
+          cd android
+          ./gradlew bundleRelease \
+            -PversionCode=$ANDROID_BUILD_NUMBER \
+            -PversionName=$ANDROID_VERSION_NAME
+    artifacts:
+      - android/app/build/outputs/**/*.aab
+    publishing:
+      slack:
+        channel: codemagic-kimlcards
+        notify_on_build_start: true
+        notify:
+          failure: true
+          success: true
+      google_play:
+        credentials: $DOKWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+        track: internal   # Any default or custom track that is not in ‘draft’ status
+        submit_as_draft: true
+  react-native-ios:
+    name: React Native iOS
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: kimelview
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.kimlcards
+      groups:
+        - ios_appstore_vars
+        - common # common env variables
+      vars:
+        XCODE_WORKSPACE: "KimlCards.xcworkspace" # <-- Put the name of your Xcode workspace here
+        XCODE_SCHEME: "KimlCards" # <-- Put the name of your Xcode scheme here
+        APP_ID: 6744095541 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
+      node: v20
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Generate .env file
+        script: |
+          cat >> .env <<EOF
+          IS_SANDBOX=$IS_SANDBOX
+          REACT_APP_WEBSITE_URL=$REACT_APP_WEBSITE_URL
+          REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
+          EOF
+      - name: Install yarn dependencies
+        script: |
+          yarn install
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios && pod install
+      - name: Set up code signing settings on Xcode project
+        script: |
+          xcode-project use-profiles --warn-only
+      - name: Set Version and build number
+        script: |
+          cd ios
+          agvtool new-version -all $IOS_BUILD_NUMBER
+          agvtool new-marketing-version $IOS_VERSION
+      - name: Build ipa for distribution
+        script: |
+          xcode-project build-ipa \
+            --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      slack:
+        channel: codemagic-kimlcards
+        notify_on_build_start: true
+        notify:
+          failure: true
+          success: true
+
+      app_store_connect:
+        auth: integration
+
+        # Configuration related to TestFlight (optional)
+        # Note: This action is performed during post-processing.
+        submit_to_testflight: true
+
+        # Configuration related to App Store (optional)
+        # Note: This action is performed during post-processing.
+        submit_to_app_store: false
