@@ -68,7 +68,7 @@ workflows:
       google_play:
         credentials: $DOKWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: internal   # Any default or custom track that is not in ‘draft’ status
-        submit_as_draft: true
+
   react-native-ios:
     name: React Native iOS
     max_build_duration: 120
@@ -123,7 +123,7 @@ workflows:
           npm run git:update && yarn install
       - name: Install CocoaPods dependencies
         script: |
-          cd ios && pod install
+          rm -rf Pods && cd ios && pod install
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles --warn-only
