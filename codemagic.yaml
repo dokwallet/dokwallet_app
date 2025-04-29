@@ -59,12 +59,12 @@ workflows:
     artifacts:
       - android/app/build/outputs/**/*.aab
     publishing:
-#      slack:
-#        channel: codemagic-kimlcards
-#        notify_on_build_start: true
-#        notify:
-#          failure: true
-#          success: true
+      slack:
+        channel: codemagic-dokwallet
+        notify_on_build_start: true
+        notify:
+          failure: true
+          success: true
       google_play:
         credentials: $DOKWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: internal   # Any default or custom track that is not in ‘draft’ status
@@ -144,12 +144,12 @@ workflows:
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
     publishing:
-#      slack:
-#        channel: codemagic-kimlcards
-#        notify_on_build_start: true
-#        notify:
-#          failure: true
-#          success: true
+      slack:
+        channel: codemagic-dokwallet
+        notify_on_build_start: true
+        notify:
+          failure: true
+          success: true
 
       app_store_connect:
         auth: integration
