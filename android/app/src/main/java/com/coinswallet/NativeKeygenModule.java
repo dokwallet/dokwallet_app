@@ -49,6 +49,7 @@ public class NativeKeygenModule extends ReactContextBaseJavaModule {
     CoinFactory.registerCoin("aptos", AptosCoin::new);
     CoinFactory.registerCoin("bitcoin_cash", BitcoinCashCoin::new);
     CoinFactory.registerCoin("cardano", CardanoCoin::new);
+    CoinFactory.registerCoin("filecoin", FilecoinCoin::new);
     // Add similar lines for other coin classes
   }
 
