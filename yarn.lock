@@ -3336,19 +3336,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@glif/filecoin-address@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@glif/filecoin-address@npm:4.0.0"
-  dependencies:
-    blakejs: 1.2.1
-    borc: 3.0.0
-    ethers: 6.13.2
-    leb128: 0.0.5
-    uint8arrays: 3.1.0
-  checksum: 73dbb6dcf5f502e1a078dd7c5ecca9fb8d4cf7b1c34977d2ce8d3592d95a1fa7ccf33335ea2ef17d7817a1a1de1ef8124d53566e5b521be8ab2aa9694ca4f137
-  languageName: node
-  linkType: hard
-
 "@gorhom/bottom-sheet@npm:^4":
   version: 4.6.4
   resolution: "@gorhom/bottom-sheet@npm:4.6.4"
@@ -7447,13 +7434,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sovpro/delimited-stream@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@sovpro/delimited-stream@npm:1.1.0"
-  checksum: e78fc97a8509c07b55483df2253137de07b10f14db15d230526a6dd95c86e99d8f54c7af8697806bd16522eec2c50e44e5b4e0294bed80da833a2185f17f3ab6
-  languageName: node
-  linkType: hard
-
 "@stablelib/aead@npm:^1.0.1":
   version: 1.0.1
   resolution: "@stablelib/aead@npm:1.0.1"
@@ -10848,7 +10828,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"blakejs@npm:1.2.1, blakejs@npm:^1.1.0, blakejs@npm:^1.2.1":
+"blakejs@npm:^1.1.0, blakejs@npm:^1.2.1":
   version: 1.2.1
   resolution: "blakejs@npm:1.2.1"
   checksum: d699ba116cfa21d0b01d12014a03e484dd76d483133e6dc9eb415aa70a119f08beb3bcefb8c71840106a00b542cba77383f8be60cd1f0d4589cb8afb922eefbe
@@ -10901,26 +10881,6 @@ __metadata:
   version: 1.0.0
   resolution: "boolbase@npm:1.0.0"
   checksum: 3e25c80ef626c3a3487c73dbfc70ac322ec830666c9ad915d11b701142fab25ec1e63eff2c450c74347acfd2de854ccde865cd79ef4db1683f7c7b046ea43bb0
-  languageName: node
-  linkType: hard
-
-"borc@npm:3.0.0":
-  version: 3.0.0
-  resolution: "borc@npm:3.0.0"
-  dependencies:
-    bignumber.js: ^9.0.0
-    buffer: ^6.0.3
-    commander: ^2.15.0
-    ieee754: ^1.1.13
-    iso-url: ^1.1.5
-    json-text-sequence: ~0.3.0
-    readable-stream: ^3.6.0
-  bin:
-    cbor2comment: bin/cbor2comment.js
-    cbor2diag: bin/cbor2diag.js
-    cbor2json: bin/cbor2json.js
-    json2cbor: bin/json2cbor.js
-  checksum: 23e39557ed952a2e6e984cfc6277e714a3077c96202604a1a404149b656766ba1d3351d4a585b0f27126964fcd14aa95ff7acee83bfe947b863bd306b84876c2
   languageName: node
   linkType: hard
 
@@ -11943,7 +11903,6 @@ __metadata:
     "@cosmjs/stargate": ^0.32.2
     "@cosmos-client/core": ^0.47.4
     "@ethersproject/shims": ^5.7.0
-    "@glif/filecoin-address": ^4.0.0
     "@gorhom/bottom-sheet": ^4
     "@hashgraph/sdk": 2.47.0
     "@json-rpc-tools/utils": ^1.7.6
@@ -14262,21 +14221,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ethers@npm:6.13.2, ethers@npm:^6.8.0":
-  version: 6.13.2
-  resolution: "ethers@npm:6.13.2"
-  dependencies:
-    "@adraffy/ens-normalize": 1.10.1
-    "@noble/curves": 1.2.0
-    "@noble/hashes": 1.3.2
-    "@types/node": 18.15.13
-    aes-js: 4.0.0-beta.5
-    tslib: 2.4.0
-    ws: 8.17.1
-  checksum: 981860c736c7ae121774ad38ea07e3611ce524a77d2fcb77db499b65afe0cbe8f344cd5204d94b68b316349ff770fd2a7d9c8b2039da41c072f98d9864099925
-  languageName: node
-  linkType: hard
-
 "ethers@npm:^6.13.1":
   version: 6.13.4
   resolution: "ethers@npm:6.13.4"
@@ -14289,6 +14233,21 @@ __metadata:
     tslib: 2.7.0
     ws: 8.17.1
   checksum: a64ad0f05ed7f79bf3092cd54ac11c3ed4a0a3fe8ee00a81053b5b4a34d84728c12fa5aa9bf3e2cc5efabbf1a0a37f62cd3a1852cf780a1ab619421fa03c2713
+  languageName: node
+  linkType: hard
+
+"ethers@npm:^6.8.0":
+  version: 6.13.2
+  resolution: "ethers@npm:6.13.2"
+  dependencies:
+    "@adraffy/ens-normalize": 1.10.1
+    "@noble/curves": 1.2.0
+    "@noble/hashes": 1.3.2
+    "@types/node": 18.15.13
+    aes-js: 4.0.0-beta.5
+    tslib: 2.4.0
+    ws: 8.17.1
+  checksum: 981860c736c7ae121774ad38ea07e3611ce524a77d2fcb77db499b65afe0cbe8f344cd5204d94b68b316349ff770fd2a7d9c8b2039da41c072f98d9864099925
   languageName: node
   linkType: hard
 
@@ -16946,7 +16905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iso-url@npm:^1.1.3, iso-url@npm:^1.1.5":
+"iso-url@npm:^1.1.3":
   version: 1.2.1
   resolution: "iso-url@npm:1.2.1"
   checksum: 1af98c4ed6a39598407fd8c3c13e997c978985f477af2be3390d2aa3e422b4b5992ffbb0dac68656b165c71850fff748ac1309d29d4f2a728707d76bf0f98557
@@ -17805,15 +17764,6 @@ __metadata:
   dependencies:
     delimit-stream: 0.1.0
   checksum: 3d413b3d2b1b9a48b12221cae86f4f247ef400ab98fa65981a5e9c0d62a289d318aeeb0b7657b3d5df5a146d7533601f5d75297b0319175797e023088fd1c8e4
-  languageName: node
-  linkType: hard
-
-"json-text-sequence@npm:~0.3.0":
-  version: 0.3.0
-  resolution: "json-text-sequence@npm:0.3.0"
-  dependencies:
-    "@sovpro/delimited-stream": ^1.1.0
-  checksum: e5dc050aadd626938514363399cf14c409f878628914922c5d470530c3f3473d6b0e16a10338dd7d863aab0291bb0e5e15d71526d14733c22e30cba771b03297
   languageName: node
   linkType: hard
 
