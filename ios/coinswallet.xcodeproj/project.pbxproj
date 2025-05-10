@@ -21,6 +21,7 @@
 		3F911F052A501CAE000E5820 /* EthereumCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F911F042A501CAE000E5820 /* EthereumCoin.swift */; };
 		3F911F082A502908000E5820 /* TronCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F911F072A502908000E5820 /* TronCoin.swift */; };
 		593D3271B8CC15F9F0AED5A4 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DCF527B2ED0097BB68504 /* ExpoModulesProvider.swift */; };
+		6BAFDDE92DCA48BA00A5C1C0 /* FilecoinCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAFDDE82DCA48BA00A5C1C0 /* FilecoinCoin.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8290ED3BD6EB4B519FC982AE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 362FA31358934F348B234F43 /* Roboto-Medium.ttf */; };
 		84981B2E9AB78850DA6EF484 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D12C2F39EDA37B40DD1EC /* ExpoModulesProvider.swift */; };
@@ -75,6 +76,7 @@
 		3F911F042A501CAE000E5820 /* EthereumCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumCoin.swift; sourceTree = "<group>"; };
 		3F911F072A502908000E5820 /* TronCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TronCoin.swift; sourceTree = "<group>"; };
 		64FC04C990DE41D18CB05715 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		6BAFDDE82DCA48BA00A5C1C0 /* FilecoinCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilecoinCoin.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = coinswallet/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DA69C8836EBDF89F33A94FF /* libPods-coinswallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-coinswallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33A156F12601A337DC82548 /* Pods-coinswallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswallet.debug.xcconfig"; path = "Target Support Files/Pods-coinswallet/Pods-coinswallet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6BAFDDE82DCA48BA00A5C1C0 /* FilecoinCoin.swift */,
 				D2C1E4202BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy */,
 				042789942A03DABE00B8290E /* fonts */,
 				13B07FAE1A68108700A75B9A /* coinswallet */,
@@ -575,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BAFDDE92DCA48BA00A5C1C0 /* FilecoinCoin.swift in Sources */,
 				3F1834F72A4F0A1A004B7D37 /* CustomMethods.swift in Sources */,
 				D2057C2D2BC514C000E14112 /* PolkadotCoin.swift in Sources */,
 				3F1834F92A4F0A56004B7D37 /* CustomMethods.m in Sources */,

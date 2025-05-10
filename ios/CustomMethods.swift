@@ -67,6 +67,9 @@ extension Data {
     CoinFactory.registerCoin(name: "cardano") { mnemonic in
       return CardanoCoin(mnemonic: mnemonic)
     }
+    CoinFactory.registerCoin(name: "filecoin") { mnemonic in
+      return FilecoinCoin(mnemonic: mnemonic)
+    }
   }
 
   @objc static func requiresMainQueueSetup() -> Bool { return true }
