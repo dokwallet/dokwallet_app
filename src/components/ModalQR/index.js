@@ -69,7 +69,7 @@ export const ModalQR = ({navigation, visible, hideModal, data, qrScheme}) => {
           <TouchableOpacity
             style={{
               ...styles.btnVerify,
-              backgroundColor: '#F44D03',
+              backgroundColor: theme.background,
             }}
             // onPress={() => {
             //   hideModal(), navigation.navigate("VerifyCreate");

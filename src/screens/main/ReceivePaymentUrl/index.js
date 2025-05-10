@@ -35,6 +35,7 @@ import {
   multiplyBNWithFixed,
   validateNumberInInput,
 } from 'dok-wallet-blockchain-networks/helper';
+import {URLData} from 'utils/wlData';
 
 const ReceivePaymentUrl = () => {
   const {theme} = useContext(ThemeContext);
@@ -83,7 +84,7 @@ const ReceivePaymentUrl = () => {
               onSubmit={() => {}}>
               {({handleBlur, values, errors, touched, setFieldValue}) => {
                 const selectedCoin = values?.selectedCoin?.options;
-                const receivePaymentUrl = `https://www.dokwallet.app/home/send/send-funds?address=${selectedCoin?.walletAddress}&amount=${values?.amount}&currency=${selectedCoin?.chain_name}:${selectedCoin?.symbol}`;
+                const receivePaymentUrl = `${URLData.appUrl}/home/send/send-funds?address=${selectedCoin?.walletAddress}&amount=${values?.amount}&currency=${selectedCoin?.chain_name}:${selectedCoin?.symbol}`;
                 return (
                   <TouchableWithoutFeedback
                     style={styles.container}

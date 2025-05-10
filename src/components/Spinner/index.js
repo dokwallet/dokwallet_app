@@ -20,7 +20,7 @@ const Spinner = ({isShownTransactionText}) => {
   return (
     <Modal style={styles.flex1} visible={true} transparent={true}>
       <View style={styles.container}>
-        <ActivityIndicator size="large" color="#F44D03" />
+        <ActivityIndicator size="large" color={theme.background} />
         {isShownTransactionText ? (
           <View style={styles.paddingView}>
             <Text style={styles.text}>

@@ -967,7 +967,9 @@ const Transfer = ({navigation, route}) => {
                 style={{
                   ...styles.button,
                   backgroundColor:
-                    isDisabled || isFetchingFeesAgain ? '#708090' : '#F44D03',
+                    isDisabled || isFetchingFeesAgain
+                      ? '#708090'
+                      : theme.background,
                 }}
                 onPress={handleSubmitForm}>
                 <Text style={styles.buttonTitle}>Confirm</Text>

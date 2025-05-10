@@ -138,7 +138,7 @@ export const Verify = ({route, navigation}) => {
                           item.id === selected ? 'red' : 'transparent',
                         backgroundColor:
                           item.audit === true
-                            ? '#F44D03'
+                            ? theme.background
                             : item.audit === false
                             ? '#CCC8C6'
                             : '#FFF7E5',
@@ -146,7 +146,7 @@ export const Verify = ({route, navigation}) => {
                           item.audit === true
                             ? '#fff'
                             : item.audit === false
-                            ? '#F44D03'
+                            ? theme.background
                             : '#FF647C',
                       }}>
                       {item.id}
@@ -258,7 +258,7 @@ export const Verify = ({route, navigation}) => {
                     iconType="material-community"
                     checkedIcon="checkbox-marked"
                     uncheckedIcon="checkbox-blank-outline"
-                    checkedColor="#F44D03"
+                    checkedColor={theme.background}
                   />
                   <Text style={styles.checkText}>
                     I acknowledge that I must safely store me seed phrase as I
@@ -270,7 +270,7 @@ export const Verify = ({route, navigation}) => {
                   disabled={!checked}
                   style={{
                     ...styles.btn,
-                    backgroundColor: checked ? '#F44D03' : '#708090',
+                    backgroundColor: checked ? theme.background : '#708090',
                   }}
                   // onPress={() =>
                   //   verify === true

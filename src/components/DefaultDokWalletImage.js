@@ -1,15 +1,14 @@
 import React, {useContext} from 'react';
 
 import {ThemeContext} from 'theme/ThemeContext';
-import LogoIconDark from 'assets/images/sidebarIcons/LogoSingleDark.svg';
-import LogoIcon from 'assets/images/sidebarIcons/LogoSingle.svg';
+import {LOGO_SINGLE, LOGO_SINGLE_DARK} from 'utils/wlData';
 
 const DefaultDokWalletImage = ({height, width}) => {
   const {theme} = useContext(ThemeContext);
   return theme.backgroundColor === '#121212' ? (
-    <LogoIconDark width={height} height={width} />
+    <LOGO_SINGLE_DARK width={height} height={width} />
   ) : (
-    <LogoIcon width={height} height={width} />
+    <LOGO_SINGLE width={height} height={width} />
   );
 };
 

@@ -20,6 +20,7 @@ const myStyles = theme =>
       justifyContent: 'center',
       alignItems: 'center',
       marginHorizontal: 12,
+      gap: 8,
       flex: 1,
     },
     mainTitle: {

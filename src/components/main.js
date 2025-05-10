@@ -67,6 +67,7 @@ import DisableComponent from 'components/DisableComponent';
 import {getLastUpdateCheckTimestamp} from 'dok-wallet-blockchain-networks/redux/auth/authSelectors';
 import {setLastUpdateCheckTimestamp} from 'dok-wallet-blockchain-networks/redux/auth/authSlice';
 import {getFeesInfo} from 'dok-wallet-blockchain-networks/feesInfo/feesInfo';
+import {WALLET_CONNECT_DATA} from 'utils/wlData';
 
 const unsecureRoute = [
   'ContactUs',
@@ -130,22 +131,10 @@ const Main = () => {
 
   const initializeWalletConnect = useCallback(async () => {
     try {
-      const walletConnectData = {
-        id: process.env.WALLET_CONNECT_ID,
-        metadata: {
-          description: 'Dokwallet',
-          icons: [
-            'https://moreover4u2-wl-resources.s3.eu-north-1.amazonaws.com/dokwallet/dokwallet_200.png',
-          ],
-          name: 'Dokwallet',
-          ssl: true,
-          url: 'https://dokwallet.com',
-        },
-      };
       if (!Object.keys(walletConnectSessions).length) {
         await clearWalletConnectStorageCache();
       }
-      await initWalletConnect(walletConnectData);
+      await initWalletConnect(WALLET_CONNECT_DATA);
       dispatch(setIsWalletConnectInitialized(true));
     } catch (e) {
       console.error('Error in initialize WalletConnect');

@@ -68,6 +68,8 @@ yarn-error.log
 
 /android/.gradle/
 android/.gradle/
+/app/build/
+/build/
 .vscode/settings.json
 *.apk
 

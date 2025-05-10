@@ -182,7 +182,7 @@ const SelectUTXOsScreen = ({navigation}) => {
                     onPress={() => onSelectChange(section.label)}>
                     <CheckBox
                       size={24}
-                      checkedColor="#F44D03"
+                      checkedColor={theme.background}
                       checked={section.isSelected}
                       iconType="material-community"
                       checkedIcon="checkbox-marked"
@@ -212,7 +212,7 @@ const SelectUTXOsScreen = ({navigation}) => {
                     }>
                     <CheckBox
                       size={24}
-                      checkedColor="#F44D03"
+                      checkedColor={theme.background}
                       checked={item.isSelected}
                       iconType="material-community"
                       checkedIcon="checkbox-marked"

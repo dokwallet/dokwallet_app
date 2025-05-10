@@ -13,6 +13,7 @@ import {ThemeContext} from 'theme/ThemeContext';
 import {isFingerprint} from 'dok-wallet-blockchain-networks/redux/settings/settingsSelectors';
 import FingerprintScanner from 'react-native-fingerprint-scanner';
 import RNScreenshotPrevent from 'react-native-screenshot-prevent';
+import {WL_APP_NAME} from 'utils/wlData';
 
 const WIDTH = Dimensions.get('window').width + 80;
 const {height: screenHeight} = Dimensions.get('window');
@@ -44,7 +45,7 @@ const ModalConfirmTransaction = ({visible, hideModal, onSuccess}) => {
     if (fingerprint && visible) {
       try {
         await FingerprintScanner.authenticate({
-          description: 'Unlock Dok Wallet with your fingerprint',
+          description: `Unlock ${WL_APP_NAME} with your fingerprint`,
         });
         onSuccess && onSuccess();
       } catch (error) {

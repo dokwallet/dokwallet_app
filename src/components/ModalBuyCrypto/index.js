@@ -6,6 +6,7 @@ import {ThemeContext} from 'theme/ThemeContext';
 import {source} from 'deprecated-react-native-prop-types/DeprecatedImagePropType';
 import {InAppBrowser} from 'react-native-inappbrowser-reborn';
 import {inAppBrowserOptions} from 'utils/common';
+import {WL_APP_NAME} from 'utils/wlData';
 
 const WIDTH = Dimensions.get('window').width + 80;
 const ITEM_WIDTH = Math.round(WIDTH * 0.7);
@@ -31,7 +32,7 @@ const ModalBuyCrypto = ({visible, hideModal, navigation, cryptoProvider}) => {
       dismissable={false}>
       <View style={styles.infoList}>
         <Text style={styles.titleInfo}>
-          Your Dokwallet`s address was copied to clipboard.
+          {`Your ${WL_APP_NAME}'s address was copied to clipboard.`}
         </Text>
         <Text style={styles.infoBox}>
           <Text style={styles.info}>

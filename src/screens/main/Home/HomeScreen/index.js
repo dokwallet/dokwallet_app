@@ -38,8 +38,6 @@ import {
 } from 'utils/hapticFeedback';
 import QRCodeIcon from 'assets/images/sidebarIcons/QRCode.svg';
 import BurgerMenuIcon from 'assets/images/sidebarIcons/BurgerMenu.svg';
-import LogoIcon from 'assets/images/sidebarIcons/LogoSingle.svg';
-import LogoIconDark from 'assets/images/sidebarIcons/LogoSingleDark.svg';
 import {MainNavigation} from 'utils/navigation';
 import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
 import {SCREEN_WIDTH} from 'utils/dimensions';
@@ -73,6 +71,7 @@ import Clipboard from '@react-native-clipboard/clipboard';
 import Toast from 'react-native-toast-message';
 import {DokSafeAreaView} from 'components/DokSafeAreaView';
 import {createWalletConnection} from 'dok-wallet-blockchain-networks/service/walletconnect';
+import {LOGO_SINGLE, LOGO_SINGLE_DARK} from 'utils/wlData';
 
 const renderScene = SceneMap({
   coins: Coins,
@@ -336,9 +335,9 @@ const HomeScreen = ({navigation, route}) => {
                   </TouchableOpacity>
                   <View style={styles.rowFlex}>
                     {theme.backgroundColor === '#121212' ? (
-                      <LogoIconDark width={40} height={40} />
+                      <LOGO_SINGLE_DARK width={40} height={40} />
                     ) : (
-                      <LogoIcon width={40} height={40} />
+                      <LOGO_SINGLE width={40} height={40} />
                     )}
                     <TouchableOpacity
                       onPress={() => {

@@ -7,7 +7,7 @@ const Loading = () => {
   const styles = myStyles(theme);
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color="#F44D03" />
+      <ActivityIndicator size="large" color={theme.background} />
     </View>
   );
 };

@@ -840,7 +840,9 @@ const Exchange = ({navigation}) => {
                 <TouchableOpacity
                   style={{
                     ...styles.button,
-                    backgroundColor: isButtonDisabled ? '#708090' : '#F44D03',
+                    backgroundColor: isButtonDisabled
+                      ? '#708090'
+                      : theme.background,
                   }}
                   onPress={handleSubmit}
                   disabled={isButtonDisabled}>

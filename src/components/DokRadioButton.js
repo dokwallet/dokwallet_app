@@ -28,7 +28,7 @@ const DokRadioButton = ({title, options, setChecked, checked}) => {
             checked={checked === item.label}
             checkedIcon="dot-circle-o"
             uncheckedIcon="circle-o"
-            checkedColor="#F44D03"
+            checkedColor={theme.background}
           />
           <Text style={styles.item}>{item.label}</Text>
         </TouchableOpacity>

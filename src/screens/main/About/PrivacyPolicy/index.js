@@ -6,9 +6,10 @@ import {ThemeContext} from 'theme/ThemeContext';
 import {useContext} from 'react';
 import {InAppBrowser} from 'react-native-inappbrowser-reborn';
 import {inAppBrowserOptions} from 'utils/common';
+import {URLData} from 'utils/wlData';
 
 const PrivacyPolicy = () => {
-  const uri = 'https://dokwallet.com/privacypolicy.html';
+  const uri = URLData.privacyPolicy;
   const {theme} = useContext(ThemeContext);
   const styles = myStyles(theme);
 

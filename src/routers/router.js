@@ -931,33 +931,7 @@ export const useRoute = isAuth => {
         <Stack.Screen
           name="ResetWallet"
           component={ResetWallet}
-          // options={{ headerShown: false }}
-          options={({navigation}) => ({
-            headerStyle: {
-              borderBottomColor: theme.headerBorder,
-              borderBottomWidth: 1,
-              backgroundColor: theme.backgroundColor,
-            },
-
-            headerTitleStyle: {
-              fontFamily: 'Roboto-Regular',
-              fontWeight: 'bold',
-              fontSize: 16,
-              color: theme.borderActiveColor,
-            },
-            title: 'DOK WALLET',
-
-            // headerLeft: () => {
-            //   return null;
-            // },
-            headerLeft: () => (
-              <TouchableOpacity
-                style={styles.headerLeftStyle}
-                onPress={() => navigation.pop()}>
-                <Back width="22" height="18" fill={theme.borderActiveColor} />
-              </TouchableOpacity>
-            ),
-          })}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="LearnReset"
@@ -969,7 +943,7 @@ export const useRoute = isAuth => {
               <TouchableOpacity
                 style={styles.headerLeftStyle}
                 onPress={() =>
-                  navigation.navigate('ResetWallet', {isFromOnBoarding: false})
+                  navigation.navigate('ResetWallet', {isFromOnBoarding: true})
                 }>
                 <Back width="22" height="18" fill={theme.borderActiveColor} />
               </TouchableOpacity>

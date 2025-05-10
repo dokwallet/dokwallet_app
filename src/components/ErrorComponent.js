@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import ModalDeleteData from 'components/ModalDeteletData';
+import {CONTACT_DETAILS} from 'utils/wlData';
 
 const ErrorComponent = () => {
   const [count, setCount] = useState(0);
@@ -20,7 +21,7 @@ const ErrorComponent = () => {
 
   const onPressContactViaEmail = useCallback(async () => {
     try {
-      await Linking.openURL('mailto:support@dokwallet.com');
+      await Linking.openURL(`mailto:${CONTACT_DETAILS.email}`);
     } catch (e) {
       console.error('error in open emails', e);
     }
@@ -28,7 +29,9 @@ const ErrorComponent = () => {
 
   const onPressContactViaTelegram = useCallback(async () => {
     try {
-      await Linking.openURL('https://t.me/dokwallet');
+      if (CONTACT_DETAILS.telegram) {
+        await Linking.openURL(CONTACT_DETAILS.telegram);
+      }
     } catch (e) {
       console.error('error in open Telegram', e);
     }

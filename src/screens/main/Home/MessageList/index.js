@@ -40,7 +40,7 @@ const renderScene = ({route}) => {
 };
 
 const RenderTabBar = props => {
-  const {styles} = props;
+  const {styles, theme} = props;
   return (
     <TabBar
       {...props}
@@ -49,7 +49,7 @@ const RenderTabBar = props => {
           <Text
             style={[
               styles.tabBarFontStyle,
-              focused && {fontWeight: 'bold', color: '#F44D03'},
+              focused && {fontWeight: 'bold', color: theme.background},
             ]}>
             {route.title}
           </Text>
@@ -145,7 +145,9 @@ const MessageList = ({navigation}) => {
           renderScene={renderScene}
           onIndexChange={setIndex}
           initialLayout={{width: SCREEN_WIDTH}}
-          renderTabBar={props => <RenderTabBar {...props} styles={styles} />}
+          renderTabBar={props => (
+            <RenderTabBar {...props} styles={styles} theme={theme} />
+          )}
         />
         <ModalInfo
           visible={showModalInfo}

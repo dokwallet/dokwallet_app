@@ -85,7 +85,7 @@ export const VerifyInfoModal = ({visible, onClose}) => {
             disabled={!infoCheck}
             style={{
               ...styles.btnVerify,
-              backgroundColor: infoCheck ? '#F44D03' : '#708090',
+              backgroundColor: infoCheck ? theme.background : '#708090',
             }}
             onPress={() => {
               onClose();
@@ -103,7 +103,7 @@ export const VerifyInfoModal = ({visible, onClose}) => {
             <Text
               style={{
                 ...styles.laterTitle,
-                color: infoCheck ? '#F44D03' : '#708090',
+                color: infoCheck ? theme.background : '#708090',
               }}>
               Do it later
             </Text>

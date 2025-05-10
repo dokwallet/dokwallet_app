@@ -1,8 +1,9 @@
-import React from 'react';
-
+import React, {useContext} from 'react';
 import {CheckBox} from '@rneui/themed';
+import {ThemeContext} from 'theme/ThemeContext';
 
 const Checkbox = ({checked, onChange, customStyle}) => {
+  const {theme} = useContext(ThemeContext);
   return (
     <CheckBox
       containerStyle={[
@@ -21,7 +22,7 @@ const Checkbox = ({checked, onChange, customStyle}) => {
       iconType="material-community"
       checkedIcon="checkbox-marked-circle"
       uncheckedIcon="checkbox-blank-circle-outline"
-      checkedColor="#F44D03"
+      checkedColor={theme.background}
     />
   );
 };

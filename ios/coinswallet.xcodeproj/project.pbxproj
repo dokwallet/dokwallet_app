@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* coinswalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* coinswalletTests.m */; };
 		042789952A03DABE00B8290E /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 042789942A03DABE00B8290E /* fonts */; };
+		05D426E03C9DA083F2EFB3AF /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD35FB20A134232729917E6 /* ExpoModulesProvider.swift */; };
+		0785AC355E6A7010F6C09446 /* libPods-coinswalletCommonPod-coinswallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB515386D1EFE99F2B3504E9 /* libPods-coinswalletCommonPod-coinswallet.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1A443259AF7FB319FD6C16AA /* libPods-coinswalletCommonPod-kimlwallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D538F737A8D9ABB04E2E9895 /* libPods-coinswalletCommonPod-kimlwallet.a */; };
+		1C492A22CB70797C955B9C4C /* libPods-coinswalletCommonPod-coinswalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 612C47FC69EBF8BAC0507C8A /* libPods-coinswalletCommonPod-coinswalletTests.a */; };
 		1C66517DDBF543F6AECC0244 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64FC04C990DE41D18CB05715 /* Roboto-Bold.ttf */; };
-		1DA317C6998331654CBABE98 /* libPods-coinswallet-coinswalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D26D713F31085564106FB7E5 /* libPods-coinswallet-coinswalletTests.a */; };
 		3F1834F72A4F0A1A004B7D37 /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834F62A4F0A1A004B7D37 /* CustomMethods.swift */; };
 		3F1834F92A4F0A56004B7D37 /* CustomMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834F82A4F0A56004B7D37 /* CustomMethods.m */; };
 		3F1834FB2A4F1470004B7D37 /* CoinFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834FA2A4F1470004B7D37 /* CoinFactory.swift */; };
@@ -25,7 +27,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8290ED3BD6EB4B519FC982AE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 362FA31358934F348B234F43 /* Roboto-Medium.ttf */; };
 		84981B2E9AB78850DA6EF484 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D12C2F39EDA37B40DD1EC /* ExpoModulesProvider.swift */; };
-		8B75296C001E7912A169FE0E /* libPods-coinswallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA69C8836EBDF89F33A94FF /* libPods-coinswallet.a */; };
+		A4AB2EF9085D5CC9BAEB02B8 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B11AD666CCA446C26BB6D3 /* ExpoModulesProvider.swift */; };
 		A9BD179BEDC14A1F99F7F32E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C386D48D108B452E86A44CA6 /* Roboto-Regular.ttf */; };
 		D2057C2D2BC514C000E14112 /* PolkadotCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2057C2C2BC514C000E14112 /* PolkadotCoin.swift */; };
 		D21ADCA12ACD362200244A4C /* SolanaCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21ADCA02ACD362200244A4C /* SolanaCoin.swift */; };
@@ -41,8 +43,40 @@
 		D2CBB6602AE62DB1004945E4 /* Litecoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CBB65F2AE62DB0004945E4 /* Litecoin.swift */; };
 		D2D4AE3B2C06FBCE00DA419A /* AptosCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D4AE3A2C06FBCD00DA419A /* AptosCoin.swift */; };
 		D2E04B462BF494740093F33F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E04B452BF494740093F33F /* Utils.swift */; };
+		D2E7E5A52DC8CB0E00A414F5 /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834F62A4F0A1A004B7D37 /* CustomMethods.swift */; };
+		D2E7E5A62DC8CB0E00A414F5 /* PolkadotCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2057C2C2BC514C000E14112 /* PolkadotCoin.swift */; };
+		D2E7E5A72DC8CB0E00A414F5 /* CustomMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834F82A4F0A56004B7D37 /* CustomMethods.m */; };
+		D2E7E5A82DC8CB0E00A414F5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		D2E7E5A92DC8CB0E00A414F5 /* BitcoinCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834FD2A4F18B6004B7D37 /* BitcoinCoin.swift */; };
+		D2E7E5AA2DC8CB0E00A414F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		D2E7E5AB2DC8CB0E00A414F5 /* CardanoCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27914502DBCC1ED007F80E9 /* CardanoCoin.swift */; };
+		D2E7E5AC2DC8CB0E00A414F5 /* CosmosCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CC4A72B5FCE7800E18851 /* CosmosCoin.swift */; };
+		D2E7E5AD2DC8CB0E00A414F5 /* ThorCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22953612B3ED65100E1794E /* ThorCoin.swift */; };
+		D2E7E5AE2DC8CB0E00A414F5 /* TronCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F911F072A502908000E5820 /* TronCoin.swift */; };
+		D2E7E5AF2DC8CB0E00A414F5 /* BitcoinCashCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26968C82CA6B1C400052999 /* BitcoinCashCoin.swift */; };
+		D2E7E5B02DC8CB0E00A414F5 /* commonExternsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F8280F2AB1EAEF004381E3 /* commonExternsion.swift */; };
+		D2E7E5B12DC8CB0E00A414F5 /* CoinFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834FA2A4F1470004B7D37 /* CoinFactory.swift */; };
+		D2E7E5B22DC8CB0E00A414F5 /* EthereumCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F911F042A501CAE000E5820 /* EthereumCoin.swift */; };
+		D2E7E5B32DC8CB0E00A414F5 /* Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF3D52B283C4300673D8F /* Ripple.swift */; };
+		D2E7E5B42DC8CB0E00A414F5 /* SolanaCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21ADCA02ACD362200244A4C /* SolanaCoin.swift */; };
+		D2E7E5B52DC8CB0E00A414F5 /* DogeCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257DE062BF2252600D7055D /* DogeCoin.swift */; };
+		D2E7E5B62DC8CB0E00A414F5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E04B452BF494740093F33F /* Utils.swift */; };
+		D2E7E5B72DC8CB0E00A414F5 /* Litecoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CBB65F2AE62DB0004945E4 /* Litecoin.swift */; };
+		D2E7E5B82DC8CB0E00A414F5 /* TezosCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23105E92B569AA100BC45DD /* TezosCoin.swift */; };
+		D2E7E5BA2DC8CB0E00A414F5 /* TonCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279746A2BDBE24500FE26D5 /* TonCoin.swift */; };
+		D2E7E5BB2DC8CB0E00A414F5 /* AptosCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D4AE3A2C06FBCD00DA419A /* AptosCoin.swift */; };
+		D2E7E5BF2DC8CB0E00A414F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D2E7E5C02DC8CB0E00A414F5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D2C1E4202BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy */; };
+		D2E7E5C12DC8CB0E00A414F5 /* deep_link_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D28DFD532D8B0B4600C77B6F /* deep_link_icon.png */; };
+		D2E7E5C22DC8CB0E00A414F5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64FC04C990DE41D18CB05715 /* Roboto-Bold.ttf */; };
+		D2E7E5C32DC8CB0E00A414F5 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 042789942A03DABE00B8290E /* fonts */; };
+		D2E7E5C42DC8CB0E00A414F5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 362FA31358934F348B234F43 /* Roboto-Medium.ttf */; };
+		D2E7E5C52DC8CB0E00A414F5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C386D48D108B452E86A44CA6 /* Roboto-Regular.ttf */; };
 		D2EDF3D62B283C4300673D8F /* Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF3D52B283C4300673D8F /* Ripple.swift */; };
 		D2F828102AB1EAEF004381E3 /* commonExternsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F8280F2AB1EAEF004381E3 /* commonExternsion.swift */; };
+		D2F849AC2DC8D32F006B2140 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F849A82DC8D32F006B2140 /* Images.xcassets */; };
+		D2F849B62DC8D334006B2140 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F849B12DC8D334006B2140 /* Images.xcassets */; };
+		F3DDEA55AA4276BA5A9DEDC7 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F469A99F6DCBC14C0AE8E /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +94,10 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* coinswalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = coinswalletTests.m; sourceTree = "<group>"; };
 		042789942A03DABE00B8290E /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		133F469A99F6DCBC14C0AE8E /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-coinswalletCommonPod-kimlwallet/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Dok Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dok Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = coinswallet/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = coinswallet/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = coinswallet/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = coinswallet/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = coinswallet/main.m; sourceTree = "<group>"; };
 		2A2D12C2F39EDA37B40DD1EC /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-coinswallet-coinswalletTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		362FA31358934F348B234F43 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -75,11 +108,15 @@
 		3F1834FD2A4F18B6004B7D37 /* BitcoinCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinCoin.swift; sourceTree = "<group>"; };
 		3F911F042A501CAE000E5820 /* EthereumCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumCoin.swift; sourceTree = "<group>"; };
 		3F911F072A502908000E5820 /* TronCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TronCoin.swift; sourceTree = "<group>"; };
+		4585DF16EF532AAD41D89D0C /* Pods-coinswalletCommonPod-coinswalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswalletCommonPod-coinswalletTests.debug.xcconfig"; path = "Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		612C47FC69EBF8BAC0507C8A /* libPods-coinswalletCommonPod-coinswalletTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-coinswalletCommonPod-coinswalletTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FC04C990DE41D18CB05715 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		6BAFDDE82DCA48BA00A5C1C0 /* FilecoinCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilecoinCoin.swift; sourceTree = "<group>"; };
+		7C3C135608CA4C0395EB2EC2 /* Pods-coinswalletCommonPod-coinswallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswalletCommonPod-coinswallet.release.xcconfig"; path = "Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = coinswallet/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8DA69C8836EBDF89F33A94FF /* libPods-coinswallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-coinswallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B33A156F12601A337DC82548 /* Pods-coinswallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswallet.debug.xcconfig"; path = "Target Support Files/Pods-coinswallet/Pods-coinswallet.debug.xcconfig"; sourceTree = "<group>"; };
+		85E82BA674ADF6D002C57447 /* Pods-coinswalletCommonPod-coinswallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswalletCommonPod-coinswallet.debug.xcconfig"; path = "Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet.debug.xcconfig"; sourceTree = "<group>"; };
+		AF218B42DB25A983216AE839 /* Pods-coinswalletCommonPod-coinswalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswalletCommonPod-coinswalletTests.release.xcconfig"; path = "Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		C0C77673C212B60CADEACA70 /* Pods-coinswalletCommonPod-kimlwallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswalletCommonPod-kimlwallet.release.xcconfig"; path = "Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet.release.xcconfig"; sourceTree = "<group>"; };
 		C386D48D108B452E86A44CA6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		D2057C2C2BC514C000E14112 /* PolkadotCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolkadotCoin.swift; sourceTree = "<group>"; };
 		D21ADCA02ACD362200244A4C /* SolanaCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaCoin.swift; sourceTree = "<group>"; };
@@ -87,23 +124,30 @@
 		D23105E92B569AA100BC45DD /* TezosCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TezosCoin.swift; sourceTree = "<group>"; };
 		D257DE062BF2252600D7055D /* DogeCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogeCoin.swift; sourceTree = "<group>"; };
 		D26968C82CA6B1C400052999 /* BitcoinCashCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinCashCoin.swift; sourceTree = "<group>"; };
-		D26D713F31085564106FB7E5 /* libPods-coinswallet-coinswalletTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-coinswallet-coinswalletTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27914502DBCC1ED007F80E9 /* CardanoCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardanoCoin.swift; sourceTree = "<group>"; };
 		D279746A2BDBE24500FE26D5 /* TonCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonCoin.swift; sourceTree = "<group>"; };
 		D28CC4A72B5FCE7800E18851 /* CosmosCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosCoin.swift; sourceTree = "<group>"; };
 		D28DFD532D8B0B4600C77B6F /* deep_link_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deep_link_icon.png; sourceTree = "<group>"; };
-		D2B105862A7E9468000CA341 /* coinswallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = coinswallet.entitlements; path = coinswallet/coinswallet.entitlements; sourceTree = "<group>"; };
 		D2C1E4202BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D2CBB65F2AE62DB0004945E4 /* Litecoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Litecoin.swift; sourceTree = "<group>"; };
 		D2D4AE3A2C06FBCD00DA419A /* AptosCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AptosCoin.swift; sourceTree = "<group>"; };
 		D2E04B452BF494740093F33F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D2E7E5CC2DC8CB0E00A414F5 /* KIML Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KIML Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EDF3D52B283C4300673D8F /* Ripple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ripple.swift; sourceTree = "<group>"; };
 		D2F8280F2AB1EAEF004381E3 /* commonExternsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commonExternsion.swift; sourceTree = "<group>"; };
+		D2F849A82DC8D32F006B2140 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2F849A92DC8D32F006B2140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F849AA2DC8D32F006B2140 /* kimlwallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kimlwallet.entitlements; sourceTree = "<group>"; };
+		D2F849B02DC8D334006B2140 /* coinswallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = coinswallet.entitlements; sourceTree = "<group>"; };
+		D2F849B12DC8D334006B2140 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2F849B22DC8D334006B2140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D538F737A8D9ABB04E2E9895 /* libPods-coinswalletCommonPod-kimlwallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-coinswalletCommonPod-kimlwallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD35FB20A134232729917E6 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-coinswalletCommonPod-coinswallet/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		E24DCF527B2ED0097BB68504 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-coinswallet/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		E7DEAE05C7712370AF9779CB /* Pods-coinswallet-coinswalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswallet-coinswalletTests.debug.xcconfig"; path = "Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7B11AD666CCA446C26BB6D3 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		EB515386D1EFE99F2B3504E9 /* libPods-coinswalletCommonPod-coinswallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-coinswalletCommonPod-coinswallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F28EEAF553B4DCEBD2021DC7 /* Pods-coinswallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswallet.release.xcconfig"; path = "Target Support Files/Pods-coinswallet/Pods-coinswallet.release.xcconfig"; sourceTree = "<group>"; };
-		FCB92A15B76F917B741394C8 /* Pods-coinswallet-coinswalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswallet-coinswalletTests.release.xcconfig"; path = "Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		F1FABD8F2608AEFED8ED33AE /* Pods-coinswalletCommonPod-kimlwallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coinswalletCommonPod-kimlwallet.debug.xcconfig"; path = "Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DA317C6998331654CBABE98 /* libPods-coinswallet-coinswalletTests.a in Frameworks */,
+				1C492A22CB70797C955B9C4C /* libPods-coinswalletCommonPod-coinswalletTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +163,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B75296C001E7912A169FE0E /* libPods-coinswallet.a in Frameworks */,
+				0785AC355E6A7010F6C09446 /* libPods-coinswalletCommonPod-coinswallet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7E5BC2DC8CB0E00A414F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A443259AF7FB319FD6C16AA /* libPods-coinswalletCommonPod-kimlwallet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,12 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				D2F8280E2AB1EAD5004381E3 /* extension */,
-				D2B105862A7E9468000CA341 /* coinswallet.entitlements */,
 				3F1834FC2A4F185A004B7D37 /* coins */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
-				13B07FB51A68108700A75B9A /* Images.xcassets */,
-				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				D28DFD532D8B0B4600C77B6F /* deep_link_icon.png */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -169,8 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				8DA69C8836EBDF89F33A94FF /* libPods-coinswallet.a */,
-				D26D713F31085564106FB7E5 /* libPods-coinswallet-coinswalletTests.a */,
+				EB515386D1EFE99F2B3504E9 /* libPods-coinswalletCommonPod-coinswallet.a */,
+				612C47FC69EBF8BAC0507C8A /* libPods-coinswalletCommonPod-coinswalletTests.a */,
+				D538F737A8D9ABB04E2E9895 /* libPods-coinswalletCommonPod-kimlwallet.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,14 +262,24 @@
 			children = (
 				7D641E65B74051897859D99F /* coinswallet */,
 				E2498F431B94BE54479292F4 /* coinswalletTests */,
+				7817FAEED3CABE4555809864 /* kimlwallet */,
 			);
 			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
+		7817FAEED3CABE4555809864 /* kimlwallet */ = {
+			isa = PBXGroup;
+			children = (
+				133F469A99F6DCBC14C0AE8E /* ExpoModulesProvider.swift */,
+			);
+			name = kimlwallet;
 			sourceTree = "<group>";
 		};
 		7D641E65B74051897859D99F /* coinswallet */ = {
 			isa = PBXGroup;
 			children = (
 				E24DCF527B2ED0097BB68504 /* ExpoModulesProvider.swift */,
+				DDD35FB20A134232729917E6 /* ExpoModulesProvider.swift */,
 			);
 			name = coinswallet;
 			sourceTree = "<group>";
@@ -235,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				6BAFDDE82DCA48BA00A5C1C0 /* FilecoinCoin.swift */,
+				D2F849AB2DC8D32F006B2140 /* kimlwallet */,
+				D2F849B32DC8D334006B2140 /* dokwallet */,
 				D2C1E4202BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy */,
 				042789942A03DABE00B8290E /* fonts */,
 				13B07FAE1A68108700A75B9A /* coinswallet */,
@@ -256,6 +318,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Dok Wallet.app */,
 				00E356EE1AD99517003FC87E /* coinswalletTests.xctest */,
+				D2E7E5CC2DC8CB0E00A414F5 /* KIML Wallet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,10 +326,12 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B33A156F12601A337DC82548 /* Pods-coinswallet.debug.xcconfig */,
-				F28EEAF553B4DCEBD2021DC7 /* Pods-coinswallet.release.xcconfig */,
-				E7DEAE05C7712370AF9779CB /* Pods-coinswallet-coinswalletTests.debug.xcconfig */,
-				FCB92A15B76F917B741394C8 /* Pods-coinswallet-coinswalletTests.release.xcconfig */,
+				85E82BA674ADF6D002C57447 /* Pods-coinswalletCommonPod-coinswallet.debug.xcconfig */,
+				7C3C135608CA4C0395EB2EC2 /* Pods-coinswalletCommonPod-coinswallet.release.xcconfig */,
+				4585DF16EF532AAD41D89D0C /* Pods-coinswalletCommonPod-coinswalletTests.debug.xcconfig */,
+				AF218B42DB25A983216AE839 /* Pods-coinswalletCommonPod-coinswalletTests.release.xcconfig */,
+				F1FABD8F2608AEFED8ED33AE /* Pods-coinswalletCommonPod-kimlwallet.debug.xcconfig */,
+				C0C77673C212B60CADEACA70 /* Pods-coinswalletCommonPod-kimlwallet.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -279,10 +344,31 @@
 			name = extension;
 			sourceTree = "<group>";
 		};
+		D2F849AB2DC8D32F006B2140 /* kimlwallet */ = {
+			isa = PBXGroup;
+			children = (
+				D2F849A82DC8D32F006B2140 /* Images.xcassets */,
+				D2F849A92DC8D32F006B2140 /* Info.plist */,
+				D2F849AA2DC8D32F006B2140 /* kimlwallet.entitlements */,
+			);
+			path = kimlwallet;
+			sourceTree = "<group>";
+		};
+		D2F849B32DC8D334006B2140 /* dokwallet */ = {
+			isa = PBXGroup;
+			children = (
+				D2F849B02DC8D334006B2140 /* coinswallet.entitlements */,
+				D2F849B12DC8D334006B2140 /* Images.xcassets */,
+				D2F849B22DC8D334006B2140 /* Info.plist */,
+			);
+			path = dokwallet;
+			sourceTree = "<group>";
+		};
 		E2498F431B94BE54479292F4 /* coinswalletTests */ = {
 			isa = PBXGroup;
 			children = (
 				2A2D12C2F39EDA37B40DD1EC /* ExpoModulesProvider.swift */,
+				E7B11AD666CCA446C26BB6D3 /* ExpoModulesProvider.swift */,
 			);
 			name = coinswalletTests;
 			sourceTree = "<group>";
@@ -294,13 +380,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "coinswalletTests" */;
 			buildPhases = (
-				1A83D03BA94D4D71DE1C20AA /* [CP] Check Pods Manifest.lock */,
+				EEDD17AABAA48D0C07C9D053 /* [CP] Check Pods Manifest.lock */,
 				B3047F0D0B920023E6D11881 /* [Expo] Configure project */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				AB7D4C969EAC2F4840EE0B75 /* [CP] Embed Pods Frameworks */,
-				AD0FC4C7A770B611A0A08915 /* [CP] Copy Pods Resources */,
+				C0563F4AFADD27824D444C5D /* [CP] Embed Pods Frameworks */,
+				95CD6DC9BD6DAB8D1BDDED5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,14 +402,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "coinswallet" */;
 			buildPhases = (
-				AD8EC9EACF48C296717FC137 /* [CP] Check Pods Manifest.lock */,
+				0582F4E0E92999CDB8F7B4B4 /* [CP] Check Pods Manifest.lock */,
 				72D35D4BB3D5CE2CB579BFA3 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				E130D93778A396F062001AF5 /* [CP] Embed Pods Frameworks */,
-				0495F0E53D53357ED6C3E978 /* [CP] Copy Pods Resources */,
+				163110C671D404A1C6CD775A /* [CP] Embed Pods Frameworks */,
+				2EDB32795E15A7A45D9E0235 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +418,28 @@
 			name = coinswallet;
 			productName = coinswallet;
 			productReference = 13B07F961A680F5B00A75B9A /* Dok Wallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2E7E5A12DC8CB0E00A414F5 /* kimlwallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2E7E5C92DC8CB0E00A414F5 /* Build configuration list for PBXNativeTarget "kimlwallet" */;
+			buildPhases = (
+				123C301C67B44A291E24D6D2 /* [CP] Check Pods Manifest.lock */,
+				D2E7E5A32DC8CB0E00A414F5 /* [Expo] Configure project */,
+				D2E7E5A42DC8CB0E00A414F5 /* Sources */,
+				D2E7E5BC2DC8CB0E00A414F5 /* Frameworks */,
+				D2E7E5BE2DC8CB0E00A414F5 /* Resources */,
+				D2E7E5C62DC8CB0E00A414F5 /* Bundle React Native code and images */,
+				9AE4305B86344157F28B84E4 /* [CP] Embed Pods Frameworks */,
+				5ADB247021C5AEB013EC9980 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kimlwallet;
+			productName = coinswallet;
+			productReference = D2E7E5CC2DC8CB0E00A414F5 /* KIML Wallet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -365,6 +473,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* coinswallet */,
+				D2E7E5A12DC8CB0E00A414F5 /* kimlwallet */,
 				00E356ED1AD99517003FC87E /* coinswalletTests */,
 			);
 		};
@@ -383,13 +492,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				D2F849B62DC8D334006B2140 /* Images.xcassets in Resources */,
 				D2C1E4212BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy in Resources */,
 				D28DFD542D8B0B4600C77B6F /* deep_link_icon.png in Resources */,
-				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				1C66517DDBF543F6AECC0244 /* Roboto-Bold.ttf in Resources */,
 				042789952A03DABE00B8290E /* fonts in Resources */,
 				8290ED3BD6EB4B519FC982AE /* Roboto-Medium.ttf in Resources */,
 				A9BD179BEDC14A1F99F7F32E /* Roboto-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7E5BE2DC8CB0E00A414F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E7E5BF2DC8CB0E00A414F5 /* LaunchScreen.storyboard in Resources */,
+				D2F849AC2DC8D32F006B2140 /* Images.xcassets in Resources */,
+				D2E7E5C02DC8CB0E00A414F5 /* PrivacyInfo.xcprivacy in Resources */,
+				D2E7E5C12DC8CB0E00A414F5 /* deep_link_icon.png in Resources */,
+				D2E7E5C22DC8CB0E00A414F5 /* Roboto-Bold.ttf in Resources */,
+				D2E7E5C32DC8CB0E00A414F5 /* fonts in Resources */,
+				D2E7E5C42DC8CB0E00A414F5 /* Roboto-Medium.ttf in Resources */,
+				D2E7E5C52DC8CB0E00A414F5 /* Roboto-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,24 +536,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios relative | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli')\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n`\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n";
 		};
-		0495F0E53D53357ED6C3E978 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet/Pods-coinswallet-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet/Pods-coinswallet-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswallet/Pods-coinswallet-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1A83D03BA94D4D71DE1C20AA /* [CP] Check Pods Manifest.lock */ = {
+		0582F4E0E92999CDB8F7B4B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,11 +551,84 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-coinswallet-coinswalletTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-coinswalletCommonPod-coinswallet-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		123C301C67B44A291E24D6D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-coinswalletCommonPod-kimlwallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		163110C671D404A1C6CD775A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EDB32795E15A7A45D9E0235 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswallet/Pods-coinswalletCommonPod-coinswallet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ADB247021C5AEB013EC9980 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72D35D4BB3D5CE2CB579BFA3 /* [Expo] Configure project */ = {
@@ -468,62 +648,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-coinswallet/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-coinswalletCommonPod-coinswallet/expo-configure-project.sh\"\n";
 		};
-		AB7D4C969EAC2F4840EE0B75 /* [CP] Embed Pods Frameworks */ = {
+		95CD6DC9BD6DAB8D1BDDED5C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD0FC4C7A770B611A0A08915 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswallet-coinswalletTests/Pods-coinswallet-coinswalletTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD8EC9EACF48C296717FC137 /* [CP] Check Pods Manifest.lock */ = {
+		9AE4305B86344157F28B84E4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-coinswallet-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-kimlwallet/Pods-coinswalletCommonPod-kimlwallet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B3047F0D0B920023E6D11881 /* [Expo] Configure project */ = {
@@ -543,23 +701,80 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-coinswallet-coinswalletTests/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-coinswalletCommonPod-coinswalletTests/expo-configure-project.sh\"\n";
 		};
-		E130D93778A396F062001AF5 /* [CP] Embed Pods Frameworks */ = {
+		C0563F4AFADD27824D444C5D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet/Pods-coinswallet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-coinswallet/Pods-coinswallet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswallet/Pods-coinswallet-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-coinswalletCommonPod-coinswalletTests/Pods-coinswalletCommonPod-coinswalletTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2E7E5A32DC8CB0E00A414F5 /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-coinswalletCommonPod-kimlwallet/expo-configure-project.sh\"\n";
+		};
+		D2E7E5C62DC8CB0E00A414F5 /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios relative | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli')\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n`\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n";
+		};
+		EEDD17AABAA48D0C07C9D053 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-coinswalletCommonPod-coinswalletTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -571,6 +786,7 @@
 			files = (
 				00E356F31AD99517003FC87E /* coinswalletTests.m in Sources */,
 				84981B2E9AB78850DA6EF484 /* ExpoModulesProvider.swift in Sources */,
+				A4AB2EF9085D5CC9BAEB02B8 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,9 +815,39 @@
 				D2E04B462BF494740093F33F /* Utils.swift in Sources */,
 				D2CBB6602AE62DB1004945E4 /* Litecoin.swift in Sources */,
 				D23105EA2B569AA100BC45DD /* TezosCoin.swift in Sources */,
-				593D3271B8CC15F9F0AED5A4 /* ExpoModulesProvider.swift in Sources */,
 				D279746B2BDBE24500FE26D5 /* TonCoin.swift in Sources */,
 				D2D4AE3B2C06FBCE00DA419A /* AptosCoin.swift in Sources */,
+				05D426E03C9DA083F2EFB3AF /* ExpoModulesProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E7E5A42DC8CB0E00A414F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E7E5A52DC8CB0E00A414F5 /* CustomMethods.swift in Sources */,
+				D2E7E5A62DC8CB0E00A414F5 /* PolkadotCoin.swift in Sources */,
+				D2E7E5A72DC8CB0E00A414F5 /* CustomMethods.m in Sources */,
+				D2E7E5A82DC8CB0E00A414F5 /* AppDelegate.mm in Sources */,
+				D2E7E5A92DC8CB0E00A414F5 /* BitcoinCoin.swift in Sources */,
+				D2E7E5AA2DC8CB0E00A414F5 /* main.m in Sources */,
+				D2E7E5AB2DC8CB0E00A414F5 /* CardanoCoin.swift in Sources */,
+				D2E7E5AC2DC8CB0E00A414F5 /* CosmosCoin.swift in Sources */,
+				D2E7E5AD2DC8CB0E00A414F5 /* ThorCoin.swift in Sources */,
+				D2E7E5AE2DC8CB0E00A414F5 /* TronCoin.swift in Sources */,
+				D2E7E5AF2DC8CB0E00A414F5 /* BitcoinCashCoin.swift in Sources */,
+				D2E7E5B02DC8CB0E00A414F5 /* commonExternsion.swift in Sources */,
+				D2E7E5B12DC8CB0E00A414F5 /* CoinFactory.swift in Sources */,
+				D2E7E5B22DC8CB0E00A414F5 /* EthereumCoin.swift in Sources */,
+				D2E7E5B32DC8CB0E00A414F5 /* Ripple.swift in Sources */,
+				D2E7E5B42DC8CB0E00A414F5 /* SolanaCoin.swift in Sources */,
+				D2E7E5B52DC8CB0E00A414F5 /* DogeCoin.swift in Sources */,
+				D2E7E5B62DC8CB0E00A414F5 /* Utils.swift in Sources */,
+				D2E7E5B72DC8CB0E00A414F5 /* Litecoin.swift in Sources */,
+				D2E7E5B82DC8CB0E00A414F5 /* TezosCoin.swift in Sources */,
+				D2E7E5BA2DC8CB0E00A414F5 /* TonCoin.swift in Sources */,
+				D2E7E5BB2DC8CB0E00A414F5 /* AptosCoin.swift in Sources */,
+				F3DDEA55AA4276BA5A9DEDC7 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +864,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7DEAE05C7712370AF9779CB /* Pods-coinswallet-coinswalletTests.debug.xcconfig */;
+			baseConfigurationReference = 4585DF16EF532AAD41D89D0C /* Pods-coinswalletCommonPod-coinswalletTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -648,7 +894,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCB92A15B76F917B741394C8 /* Pods-coinswallet-coinswalletTests.release.xcconfig */;
+			baseConfigurationReference = AF218B42DB25A983216AE839 /* Pods-coinswalletCommonPod-coinswalletTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -675,18 +921,18 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B33A156F12601A337DC82548 /* Pods-coinswallet.debug.xcconfig */;
+			baseConfigurationReference = 85E82BA674ADF6D002C57447 /* Pods-coinswalletCommonPod-coinswallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = coinswallet/coinswallet.entitlements;
+				CODE_SIGN_ENTITLEMENTS = dokwallet/coinswallet.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Divyang Khatri (ZBWJFA97F3)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HJ6G8C9BU;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = coinswallet/Info.plist;
+				INFOPLIST_FILE = dokwallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dok Wallet";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -717,17 +963,17 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F28EEAF553B4DCEBD2021DC7 /* Pods-coinswallet.release.xcconfig */;
+			baseConfigurationReference = 7C3C135608CA4C0395EB2EC2 /* Pods-coinswalletCommonPod-coinswallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = coinswallet/coinswallet.entitlements;
+				CODE_SIGN_ENTITLEMENTS = dokwallet/coinswallet.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Moreover4u2 Ltd (9HJ6G8C9BU)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HJ6G8C9BU;
-				INFOPLIST_FILE = coinswallet/Info.plist;
+				INFOPLIST_FILE = dokwallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dok Wallet";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -916,6 +1162,88 @@
 			};
 			name = Release;
 		};
+		D2E7E5CA2DC8CB0E00A414F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1FABD8F2608AEFED8ED33AE /* Pods-coinswalletCommonPod-kimlwallet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = kimlwallet/kimlwallet.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development: Divyang Khatri (ZBWJFA97F3)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HJ6G8C9BU;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = kimlwallet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "KIML Wallet";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"$(inherited)",
+				);
+				MARKETING_VERSION = 0.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimlwallet;
+				PRODUCT_NAME = "KIML Wallet";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DokWalletDevProfile;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "coinswallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		D2E7E5CB2DC8CB0E00A414F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0C77673C212B60CADEACA70 /* Pods-coinswalletCommonPod-kimlwallet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = kimlwallet/kimlwallet.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Moreover4u2 Ltd (9HJ6G8C9BU)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HJ6G8C9BU;
+				INFOPLIST_FILE = kimlwallet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "KIML Wallet";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"$(inherited)",
+				);
+				MARKETING_VERSION = 0.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimlwallet;
+				PRODUCT_NAME = "KIML Wallet";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DokWalletDistProfile;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "coinswallet-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -942,6 +1270,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2E7E5C92DC8CB0E00A414F5 /* Build configuration list for PBXNativeTarget "kimlwallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2E7E5CA2DC8CB0E00A414F5 /* Debug */,
+				D2E7E5CB2DC8CB0E00A414F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

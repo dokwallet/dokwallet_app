@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import {Appearance} from 'react-native';
 import {getAsyncStorageData, storeAsyncStorageData} from 'utils/asyncStorage';
+import {wlName} from 'utils/wlData';
 
 export const ThemeContext = createContext();
 
@@ -63,8 +64,23 @@ export const ThemeProvider = ({children}) => {
   );
 };
 
-export const lightTheme = {
+const DOK_COLOR = {
   background: '#F44D03',
+};
+
+const KIML_COLOR = {
+  background: '#4F8DD8',
+};
+
+const WL_COLORS = {
+  dokwallet: DOK_COLOR,
+  kimlwallet: KIML_COLOR,
+};
+
+const DYNAMIC_COLOR = WL_COLORS[wlName] || WL_COLORS.dokwallet;
+
+export const lightTheme = {
+  ...DYNAMIC_COLOR,
   font: '#000000',
   primary: '#4D4A49',
   lightBackground: '#F5F5F5',
@@ -90,7 +106,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  background: '#F44D03',
+  ...DYNAMIC_COLOR,
   font: '#FFFFFF',
   primary: '#FFFFFF',
   lightBackground: '#333333',

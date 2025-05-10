@@ -128,33 +128,63 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        release {
+        dokwalletRelease {
             // Uncomment this if you make build locally.
             if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
                 storeFile file(System.getenv()["CM_KEYSTORE_PATH"])
                 storePassword System.getenv()["CM_KEYSTORE_PASSWORD"]
                 keyAlias System.getenv()["CM_KEY_ALIAS"]
                 keyPassword System.getenv()["CM_KEY_PASSWORD"]
-            } else if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
-                storeFile file(MYAPP_UPLOAD_STORE_FILE)
-                storePassword MYAPP_UPLOAD_STORE_PASSWORD
-                keyAlias MYAPP_UPLOAD_KEY_ALIAS
-                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            } else if (project.hasProperty('DOKWALLET_UPLOAD_STORE_FILE')) {
+                storeFile file(DOKWALLET_UPLOAD_STORE_FILE)
+                storePassword DOKWALLET_UPLOAD_STORE_PASSWORD
+                keyAlias DOKWALLET_UPLOAD_KEY_ALIAS
+                keyPassword DOKWALLET_UPLOAD_KEY_PASSWORD
             }
+        }
+        kimlwalletRelease {
+            // Uncomment this if you make build locally.
+            if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
+                storeFile file(DOKWALLET_UPLOAD_STORE_FILE)
+                storePassword DOKWALLET_UPLOAD_STORE_PASSWORD
+                keyAlias DOKWALLET_UPLOAD_KEY_ALIAS
+                keyPassword DOKWALLET_UPLOAD_KEY_PASSWORD
+            } else if (project.hasProperty('KIMLWALLET_UPLOAD_STORE_FILE')) {
+                storeFile file(KIMLWALLET_UPLOAD_STORE_FILE)
+                storePassword KIMLWALLET_UPLOAD_STORE_PASSWORD
+                keyAlias KIMLWALLET_UPLOAD_KEY_ALIAS
+                keyPassword KIMLWALLET_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
+    flavorDimensions = ["default"]
+    productFlavors {
+        dokwallet {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.dok.wallet"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.coinswallet"
+        }
+        kimlwallet {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.kimlwallet"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.coinswallet"
         }
     }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
             manifestPlaceholders = [usesCleartextTraffic:"true"]
+            matchingFallbacks = ['debug', 'release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             manifestPlaceholders = [usesCleartextTraffic:"false"]
+            signingConfig signingConfigs.kimlwalletRelease
         }
     }
 }
