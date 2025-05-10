@@ -34,6 +34,7 @@
     "@cosmjs/stargate": "^0.32.2",
     "@cosmos-client/core": "^0.47.4",
     "@ethersproject/shims": "^5.7.0",
+    "@glif/filecoin-address": "^4.0.0",
     "@gorhom/bottom-sheet": "^4",
     "@hashgraph/sdk": "2.47.0",
     "@json-rpc-tools/utils": "^1.7.6",
