@@ -46,13 +46,13 @@ workflows:
           EOF
       - name: Install yarn dependencies
         script: |
-          npm run git:update && yarn install && export NODE_OPTIONS="--max-old-space-size=8192"
+          npm run git:update && yarn install
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
       - name: Build Android release
         script: |
-          cd android
+          export NODE_OPTIONS="--max-old-space-size=8192" && cd android
           ./gradlew bundleRelease \
             -PversionCode=$ANDROID_BUILD_NUMBER \
             -PversionName=$ANDROID_VERSION_NAME
