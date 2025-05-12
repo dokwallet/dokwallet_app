@@ -46,7 +46,7 @@ workflows:
           EOF
       - name: Install yarn dependencies
         script: |
-          npm run git:update && yarn install
+          npm run git:update && yarn install && export NODE_OPTIONS="--max-old-space-size=8192"
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
