@@ -142,7 +142,7 @@
     "react-native-quick-base64": "^2.0.7",
     "react-native-quick-crypto": "^0.7.3",
     "react-native-randombytes": "^3.6.1",
-    "react-native-reanimated": "^3.14.0",
+    "react-native-reanimated": "3.16.7",
     "react-native-render-html": "^6.3.4",
     "react-native-restart": "^0.0.27",
     "react-native-safe-area-context": "^5.1.0",
