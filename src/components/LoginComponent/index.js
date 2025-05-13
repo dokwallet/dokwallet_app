@@ -12,6 +12,7 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
   AppState,
+  SafeAreaView,
 } from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {Formik} from 'formik';
@@ -32,7 +33,6 @@ import myStyles from './LoginScreenStyles';
 import {selectAllWallets} from 'dok-wallet-blockchain-networks/redux/wallets/walletsSelector';
 import RNScreenshotPrevent from 'react-native-screenshot-prevent';
 import {isNoUpdateAvailable} from 'dok-wallet-blockchain-networks/redux/extraData/extraSelectors';
-import {DokSafeAreaView} from 'components/DokSafeAreaView';
 import {LOGO, LOGO_DARK, WL_APP_NAME} from 'utils/wlData';
 
 const LoginComponent = ({navigation, onClose, visible}) => {
@@ -150,7 +150,8 @@ const LoginComponent = ({navigation, onClose, visible}) => {
   };
 
   return (
-    <DokSafeAreaView style={styles.safeAreaView}>
+    //use this safeareaview don't use other
+    <SafeAreaView style={styles.safeAreaView}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
           <View style={styles.formInput}>
@@ -241,7 +242,7 @@ const LoginComponent = ({navigation, onClose, visible}) => {
         navigation={navigation}
         page={'Forgot'}
       />
-    </DokSafeAreaView>
+    </SafeAreaView>
   );
 };
 export default LoginComponent;

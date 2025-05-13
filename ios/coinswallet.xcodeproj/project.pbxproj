@@ -22,7 +22,6 @@
 		3F1834FE2A4F18B6004B7D37 /* BitcoinCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834FD2A4F18B6004B7D37 /* BitcoinCoin.swift */; };
 		3F911F052A501CAE000E5820 /* EthereumCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F911F042A501CAE000E5820 /* EthereumCoin.swift */; };
 		3F911F082A502908000E5820 /* TronCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F911F072A502908000E5820 /* TronCoin.swift */; };
-		593D3271B8CC15F9F0AED5A4 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DCF527B2ED0097BB68504 /* ExpoModulesProvider.swift */; };
 		6BAFDDE92DCA48BA00A5C1C0 /* FilecoinCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAFDDE82DCA48BA00A5C1C0 /* FilecoinCoin.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8290ED3BD6EB4B519FC982AE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 362FA31358934F348B234F43 /* Roboto-Medium.ttf */; };
@@ -42,6 +41,8 @@
 		D2C1E4212BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D2C1E4202BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy */; };
 		D2CBB6602AE62DB1004945E4 /* Litecoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CBB65F2AE62DB0004945E4 /* Litecoin.swift */; };
 		D2D4AE3B2C06FBCE00DA419A /* AptosCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D4AE3A2C06FBCD00DA419A /* AptosCoin.swift */; };
+		D2DCDEDA2DD2053A001131F7 /* FilecoinCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DCDED92DD2053A001131F7 /* FilecoinCoin.swift */; };
+		D2DCDEDB2DD2053A001131F7 /* FilecoinCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DCDED92DD2053A001131F7 /* FilecoinCoin.swift */; };
 		D2E04B462BF494740093F33F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E04B452BF494740093F33F /* Utils.swift */; };
 		D2E7E5A52DC8CB0E00A414F5 /* CustomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1834F62A4F0A1A004B7D37 /* CustomMethods.swift */; };
 		D2E7E5A62DC8CB0E00A414F5 /* PolkadotCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2057C2C2BC514C000E14112 /* PolkadotCoin.swift */; };
@@ -131,6 +132,7 @@
 		D2C1E4202BDFB5EC00C33CCC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D2CBB65F2AE62DB0004945E4 /* Litecoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Litecoin.swift; sourceTree = "<group>"; };
 		D2D4AE3A2C06FBCD00DA419A /* AptosCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AptosCoin.swift; sourceTree = "<group>"; };
+		D2DCDED92DD2053A001131F7 /* FilecoinCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilecoinCoin.swift; sourceTree = "<group>"; };
 		D2E04B452BF494740093F33F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D2E7E5CC2DC8CB0E00A414F5 /* KIML Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KIML Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EDF3D52B283C4300673D8F /* Ripple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ripple.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		3F1834FC2A4F185A004B7D37 /* coins */ = {
 			isa = PBXGroup;
 			children = (
+				D2DCDED92DD2053A001131F7 /* FilecoinCoin.swift */,
 				D27914502DBCC1ED007F80E9 /* CardanoCoin.swift */,
 				D2D4AE3A2C06FBCD00DA419A /* AptosCoin.swift */,
 				D257DE062BF2252600D7055D /* DogeCoin.swift */,
@@ -818,6 +821,7 @@
 				D279746B2BDBE24500FE26D5 /* TonCoin.swift in Sources */,
 				D2D4AE3B2C06FBCE00DA419A /* AptosCoin.swift in Sources */,
 				05D426E03C9DA083F2EFB3AF /* ExpoModulesProvider.swift in Sources */,
+				D2DCDEDB2DD2053A001131F7 /* FilecoinCoin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +848,7 @@
 				D2E7E5B52DC8CB0E00A414F5 /* DogeCoin.swift in Sources */,
 				D2E7E5B62DC8CB0E00A414F5 /* Utils.swift in Sources */,
 				D2E7E5B72DC8CB0E00A414F5 /* Litecoin.swift in Sources */,
+				D2DCDEDA2DD2053A001131F7 /* FilecoinCoin.swift in Sources */,
 				D2E7E5B82DC8CB0E00A414F5 /* TezosCoin.swift in Sources */,
 				D2E7E5BA2DC8CB0E00A414F5 /* TonCoin.swift in Sources */,
 				D2E7E5BB2DC8CB0E00A414F5 /* AptosCoin.swift in Sources */,

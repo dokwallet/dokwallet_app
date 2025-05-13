@@ -31,6 +31,8 @@ const logoMap = {
     onboarding2: require('assets/dokwallet/onboarding2.png'),
     onboarding3: require('assets/dokwallet/onboarding3.png'),
     onboarding4: require('assets/dokwallet/onboarding4.png'),
+    card: require('assets/dokwallet/card.png'),
+    card2: require('assets/dokwallet/card2.png'),
   },
   kimlwallet: {
     logo: require('assets/kimlwallet/logo.svg').default,

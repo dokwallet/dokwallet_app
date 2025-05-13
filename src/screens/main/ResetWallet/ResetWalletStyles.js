@@ -60,7 +60,6 @@ const myStyles = theme =>
       borderRadius: 10,
       width: 150,
       height: 150,
-      backgroundColor: 'red',
     },
     shadow: {
       ...Platform.select({

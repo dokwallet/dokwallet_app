@@ -94,6 +94,12 @@ def getMyVersionName = { ->
 
 
 android {
+    def keystorePropertiesFile = rootProject.file("keystore.properties")
+    def keystoreProperties = new Properties()
+    if (keystorePropertiesFile.exists()) {
+        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    }
+
     lintOptions {
         abortOnError false
     }
@@ -135,11 +141,11 @@ android {
                 storePassword System.getenv()["CM_KEYSTORE_PASSWORD"]
                 keyAlias System.getenv()["CM_KEY_ALIAS"]
                 keyPassword System.getenv()["CM_KEY_PASSWORD"]
-            } else if (project.hasProperty('DOKWALLET_UPLOAD_STORE_FILE')) {
-                storeFile file(DOKWALLET_UPLOAD_STORE_FILE)
-                storePassword DOKWALLET_UPLOAD_STORE_PASSWORD
-                keyAlias DOKWALLET_UPLOAD_KEY_ALIAS
-                keyPassword DOKWALLET_UPLOAD_KEY_PASSWORD
+            }else if (keystoreProperties.containsKey('DOKWALLET_UPLOAD_STORE_FILE')) {
+                storeFile file(keystoreProperties['DOKWALLET_UPLOAD_STORE_FILE'])
+                storePassword keystoreProperties['DOKWALLET_UPLOAD_STORE_PASSWORD']
+                keyAlias keystoreProperties['DOKWALLET_UPLOAD_KEY_ALIAS']
+                keyPassword keystoreProperties['DOKWALLET_UPLOAD_KEY_PASSWORD']
             }
         }
         kimlwalletRelease {
@@ -149,11 +155,11 @@ android {
                 storePassword DOKWALLET_UPLOAD_STORE_PASSWORD
                 keyAlias DOKWALLET_UPLOAD_KEY_ALIAS
                 keyPassword DOKWALLET_UPLOAD_KEY_PASSWORD
-            } else if (project.hasProperty('KIMLWALLET_UPLOAD_STORE_FILE')) {
-                storeFile file(KIMLWALLET_UPLOAD_STORE_FILE)
-                storePassword KIMLWALLET_UPLOAD_STORE_PASSWORD
-                keyAlias KIMLWALLET_UPLOAD_KEY_ALIAS
-                keyPassword KIMLWALLET_UPLOAD_KEY_PASSWORD
+            } else if (keystoreProperties.containsKey('KIMLWALLET_UPLOAD_STORE_FILE')) {
+                storeFile file(keystoreProperties['KIMLWALLET_UPLOAD_STORE_FILE'])
+                storePassword keystoreProperties['KIMLWALLET_UPLOAD_STORE_PASSWORD']
+                keyAlias keystoreProperties['KIMLWALLET_UPLOAD_KEY_ALIAS']
+                keyPassword keystoreProperties['KIMLWALLET_UPLOAD_KEY_PASSWORD']
             }
         }
     }
@@ -164,12 +170,14 @@ android {
             applicationId "com.dok.wallet"
             targetSdkVersion rootProject.ext.targetSdkVersion
             resValue "string", "build_config_package", "com.coinswallet"
+            signingConfig signingConfigs.dokwalletRelease
         }
         kimlwallet {
             minSdkVersion rootProject.ext.minSdkVersion
             applicationId "com.kimlwallet"
             targetSdkVersion rootProject.ext.targetSdkVersion
             resValue "string", "build_config_package", "com.coinswallet"
+            signingConfig signingConfigs.kimlwalletRelease
         }
     }
     buildTypes {
@@ -184,7 +192,6 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             manifestPlaceholders = [usesCleartextTraffic:"false"]
-            signingConfig signingConfigs.kimlwalletRelease
         }
     }
 }
