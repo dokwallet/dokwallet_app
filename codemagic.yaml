@@ -52,7 +52,7 @@ workflows:
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
       - name: Build Android release
         script: |
-          cd android
+          export NODE_OPTIONS="--max-old-space-size=8192" && cd android
           ./gradlew bundleRelease \
             -PversionCode=$ANDROID_BUILD_NUMBER \
             -PversionName=$ANDROID_VERSION_NAME
