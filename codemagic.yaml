@@ -79,7 +79,7 @@ workflows:
             --credentials @file:dok_gcloud.json \
             --track "internal" \
             --rollout 0.20 \
-            --bundle build/app/outputs/bundle/dokwalletRelease/app-dokwallet-release.aab
+            --bundle android/app/build/outputs/bundle/dokwalletRelease/app-dokwallet-release.aab
 
       - name: Publish KIML Wallet
         script: |
@@ -88,7 +88,7 @@ workflows:
             --credentials @file:kiml_gcloud.json \
             --track "internal" \
             --rollout 0.20 \
-            --bundle build/app/outputs/bundle/kimlwalletRelease/app-kimlwallet-release.aab
+            --bundle android/app/build/outputs/bundle/kimlwalletRelease/app-kimlwallet-release.aab
     artifacts:
       - android/app/build/outputs/**/*.aab
 
