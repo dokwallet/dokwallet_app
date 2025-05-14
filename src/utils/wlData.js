@@ -1,5 +1,5 @@
 import {getBundleId} from 'react-native-device-info';
-import {setWhiteLabelIdToDokApi} from '../../dok-wallet-blockchain-networks/config/dokApi';
+import {setWhiteLabelIdToDokApi} from 'dok-wallet-blockchain-networks/config/dokApi';
 
 const bundleId = getBundleId();
 

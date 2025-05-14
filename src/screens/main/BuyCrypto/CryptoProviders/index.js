@@ -354,7 +354,7 @@ const CryptoProviders = () => {
                       />
                       <TextInput
                         style={styles.input}
-                        label="Amount"
+                        label="    Amount"
                         textColor={theme.font}
                         theme={{
                           colors: {

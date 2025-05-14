@@ -1,5 +1,11 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {Platform, Linking, Text, TextInput} from 'react-native';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import {Platform, Linking, Text, TextInput, StatusBar} from 'react-native';
 import {shallowEqual, useDispatch, useSelector} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {useRoute} from 'routers/router';
@@ -68,6 +74,7 @@ import {getLastUpdateCheckTimestamp} from 'dok-wallet-blockchain-networks/redux/
 import {setLastUpdateCheckTimestamp} from 'dok-wallet-blockchain-networks/redux/auth/authSlice';
 import {getFeesInfo} from 'dok-wallet-blockchain-networks/feesInfo/feesInfo';
 import {WALLET_CONNECT_DATA} from 'utils/wlData';
+import {ThemeContext} from 'theme/ThemeContext';
 
 const unsecureRoute = [
   'ContactUs',
@@ -314,9 +321,16 @@ const Main = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const {theme} = useContext(ThemeContext);
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
+      <StatusBar
+        backgroundColor={theme.backgroundColor}
+        barStyle={
+          theme.backgroundColor === '#121212' ? 'light-content' : 'dark-content'
+        }
+      />
       {disableMessage ? (
         <DisableComponent />
       ) : (

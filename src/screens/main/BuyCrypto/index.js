@@ -66,7 +66,9 @@ const BuyCrypto = ({navigation}) => {
                         {index === 0 ? 'Credit Card\nBank Transfer' : 'OTC'}
                       </Text>
                       <Text style={styles.cardDescription} numberOfLines={1}>
-                        {index === 0 ? 'Alternative Payment Method' :  `(Must be over ${currencySymbol[localCurrency]}10000)`}
+                        {index === 0
+                          ? 'Alternative Payment Method'
+                          : `(Must be over ${currencySymbol[localCurrency]}10000)`}
                       </Text>
                     </View>
                   </ImageBackground>

@@ -13,7 +13,7 @@ import {VerifyCreate} from 'components/VerifyCreate';
 import {Verify} from 'components/Verify';
 import Sidebar from 'components/Sidebar';
 import Scanner from 'screens/main/Scanner';
-import {Keyboard, StyleSheet, TouchableOpacity} from 'react-native';
+import {Keyboard, StatusBar, StyleSheet, TouchableOpacity} from 'react-native';
 import Back from 'assets/images/sidebarIcons/Back.svg';
 import ShareIcon from 'assets/images/icons/share.svg';
 import CreateWallet from 'screens/main/Wallets/CreateWallet';
