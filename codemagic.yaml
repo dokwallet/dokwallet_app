@@ -74,16 +74,18 @@ workflows:
             -PversionName=$KIMLWALLET_ANDROID_VERSION_NAME
       - name: Publish Dok Wallet
         script: |
+          echo $DOKWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS > dok_gcloud.json
           google-play bundles publish \
-            --credentials @env:$DOKWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS \
+            --credentials @file:dok_gcloud.json \
             --track "internal" \
             --rollout 0.20 \
             --bundle build/app/outputs/bundle/dokwalletRelease/app-dokwallet-release.aab
 
       - name: Publish KIML Wallet
         script: |
+          echo $KIMLWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS > kiml_gcloud.json
           google-play bundles publish \
-            --credentials @env:$KIMLWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS \
+            --credentials @file:kiml_gcloud.json \
             --track "internal" \
             --rollout 0.20 \
             --bundle build/app/outputs/bundle/kimlwalletRelease/app-kimlwallet-release.aab
