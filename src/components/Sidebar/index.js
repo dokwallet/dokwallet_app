@@ -47,7 +47,7 @@ import {getCountry} from 'react-native-localize';
 
 const Drawer = createDrawerNavigator();
 
-const HIDE_SWAP_COUNTRIES = [];
+const HIDE_SWAP_COUNTRIES = ['US'];
 
 export default function Sidebar({navigation, route}) {
   const userWalletName = useSelector(selectCurrentWallet)?.walletName;
