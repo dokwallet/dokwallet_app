@@ -60,24 +60,30 @@ workflows:
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
-      - name: Build Android release
+      - name: Build Dok Wallet Android release
         script: |
           export NODE_OPTIONS="--max-old-space-size=8192" && cd android
           ./gradlew bundleDokwalletRelease \
             -PversionCode=$DOKWALLET_ANDROID_BUILD_NUMBER \
             -PversionName=$DOKWALLET_ANDROID_VERSION_NAME
+      - name: Build KIML Wallet Android release
+        script: |
+          export NODE_OPTIONS="--max-old-space-size=8192" && cd android
           ./gradlew bundleKimlwalletRelease \
             -PversionCode=$KIMLWALLET_ANDROID_BUILD_NUMBER \
             -PversionName=$KIMLWALLET_ANDROID_VERSION_NAME
-      - name: Upload builds
+      - name: Publish Dok Wallet
         script: |
           google-play bundles publish \
-            --credentials @env:$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS \
+            --credentials @env:$DOKWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS \
             --track "internal" \
             --rollout 0.20 \
             --bundle build/app/outputs/bundle/dokwalletRelease/app-dokwallet-release.aab
+
+      - name: Publish KIML Wallet
+        script: |
           google-play bundles publish \
-            --credentials @env:$GCLOUD_SERVICE_ACCOUNT_CREDENTIALS \
+            --credentials @env:$KIMLWALLET_GCLOUD_SERVICE_ACCOUNT_CREDENTIALS \
             --track "internal" \
             --rollout 0.20 \
             --bundle build/app/outputs/bundle/kimlwalletRelease/app-kimlwallet-release.aab
