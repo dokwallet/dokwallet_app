@@ -137,10 +137,10 @@ android {
         dokwalletRelease {
             // Uncomment this if you make build locally.
             if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
-                storeFile file(System.getenv()["CM_KEYSTORE_PATH"])
-                storePassword System.getenv()["CM_KEYSTORE_PASSWORD"]
-                keyAlias System.getenv()["CM_KEY_ALIAS"]
-                keyPassword System.getenv()["CM_KEY_PASSWORD"]
+                storeFile file(System.getenv()["CM_DOKWALLET_STORE_FILE"])
+                storePassword System.getenv()["CM_DOKWALLET_STORE_PASSWORD"]
+                keyAlias System.getenv()["CM_DOKWALLET_KEY_ALIAS"]
+                keyPassword System.getenv()["CM_DOKWALLET_KEY_PASSWORD"]
             }else if (keystoreProperties.containsKey('DOKWALLET_UPLOAD_STORE_FILE')) {
                 storeFile file(keystoreProperties['DOKWALLET_UPLOAD_STORE_FILE'])
                 storePassword keystoreProperties['DOKWALLET_UPLOAD_STORE_PASSWORD']
@@ -151,10 +151,10 @@ android {
         kimlwalletRelease {
             // Uncomment this if you make build locally.
             if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
-                storeFile file(DOKWALLET_UPLOAD_STORE_FILE)
-                storePassword DOKWALLET_UPLOAD_STORE_PASSWORD
-                keyAlias DOKWALLET_UPLOAD_KEY_ALIAS
-                keyPassword DOKWALLET_UPLOAD_KEY_PASSWORD
+                storeFile file(System.getenv()["CM_KIMLWALLET_STORE_FILE"])
+                storePassword System.getenv()["CM_KIMLWALLET_STORE_PASSWORD"]
+                keyAlias System.getenv()["CM_KIMLWALLET_KEY_ALIAS"]
+                keyPassword System.getenv()["CM_KIMLWALLET_KEY_PASSWORD"]
             } else if (keystoreProperties.containsKey('KIMLWALLET_UPLOAD_STORE_FILE')) {
                 storeFile file(keystoreProperties['KIMLWALLET_UPLOAD_STORE_FILE'])
                 storePassword keystoreProperties['KIMLWALLET_UPLOAD_STORE_PASSWORD']

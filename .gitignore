@@ -70,6 +70,8 @@ yarn-error.log
 android/.gradle/
 /app/build/
 /build/
+/android/app/dokwallet/release
+/android/app/kimlwallet/release
 .vscode/settings.json
 *.apk
 
