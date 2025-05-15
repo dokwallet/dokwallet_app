@@ -361,7 +361,10 @@ const Transfer = ({navigation, route}) => {
   );
 
   const onChangeCustomFees = text => {
-    const tempValues = validateNumberInInput(text);
+    const tempValues = validateNumberInInput(
+      text,
+      transferData?.currentCoin?.decimal,
+    );
     setCustomFees(tempValues || '0');
     dispatch(updateFees({gasPrice: tempValues || '0', convertedChainName}));
   };

@@ -371,7 +371,10 @@ const SellCrypto = ({navigation}) => {
                       blurOnSubmit={false}
                       name="amount"
                       onChangeText={text => {
-                        const tempValues = validateNumberInInput(text);
+                        const tempValues = validateNumberInInput(
+                          text,
+                          values?.selectedCoin?.options?.decimal,
+                        );
                         setFieldValue('amount', tempValues);
                         onSubmit(
                           {...values, amount: tempValues},

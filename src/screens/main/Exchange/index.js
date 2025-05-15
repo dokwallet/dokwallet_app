@@ -186,7 +186,10 @@ const Exchange = ({navigation}) => {
       if (selectedToAsset) {
         setIsFetching({from: false, to: true});
       }
-      const tempValues = validateNumberInInput(data);
+      const tempValues = validateNumberInInput(
+        data,
+        selectedFromAsset?.decimal,
+      );
       const tempFiatPay = multiplyBNWithFixed(
         tempValues,
         selectedFromAsset?.currencyRate,
@@ -209,15 +212,17 @@ const Exchange = ({navigation}) => {
           setExchangeFields({amountFrom: tempValues, fiatPay: tempFiatPay}),
         );
       }
-      await debounceEstimateAmount(
-        selectedFromAsset,
-        selectedToAsset,
-        tempValues,
-        dispatch,
-        () => {
-          setIsFetching({from: false, to: false});
-        },
-      );
+      if (selectedFromAsset?.symbol && selectedToAsset?.symbol) {
+        await debounceEstimateAmount(
+          selectedFromAsset,
+          selectedToAsset,
+          tempValues,
+          dispatch,
+          () => {
+            setIsFetching({from: false, to: false});
+          },
+        );
+      }
     },
     [debounceEstimateAmount, dispatch, selectedFromAsset, selectedToAsset],
   );

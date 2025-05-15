@@ -74,6 +74,12 @@ const myStyles = theme =>
       fontFamily: 'Roboto-Regular',
       marginTop: 10,
     },
+    inputTextStyle: {
+      fontSize: 14,
+      fontWeight: '500',
+      fontFamily: 'Roboto-Regular',
+      color: theme.font,
+    },
   });
 
 export default myStyles;

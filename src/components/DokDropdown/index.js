@@ -45,6 +45,7 @@ const DokDropdown = ({
         labelField="label"
         valueField="value"
         placeholder={placeholder || 'Select'}
+        inputSearchStyle={styles.inputTextStyle}
         value={value}
         title
         onChange={onChangeValue}

@@ -152,7 +152,10 @@ const ReceivePaymentUrl = () => {
                         blurOnSubmit={false}
                         name="amount"
                         onChangeText={text => {
-                          const tempValues = validateNumberInInput(text);
+                          const tempValues = validateNumberInInput(
+                            text,
+                            selectedCoin?.decimal,
+                          );
                           const tempAmount = multiplyBNWithFixed(
                             tempValues,
                             selectedCoin?.currencyRate,
@@ -187,7 +190,7 @@ const ReceivePaymentUrl = () => {
                         blurOnSubmit={false}
                         name="currencyAmount"
                         onChangeText={text => {
-                          const tempValues = validateNumberInInput(text);
+                          const tempValues = validateNumberInInput(text, 2);
                           const tempAmount = new BigNumber(tempValues)
                             .dividedBy(
                               new BigNumber(selectedCoin?.currencyRate),
