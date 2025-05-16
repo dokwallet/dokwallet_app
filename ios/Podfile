@@ -15,15 +15,10 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'coinswallet' do
+
+abstract_target 'coinswalletCommonPod' do
   use_expo_modules!
-  post_integrate do |installer|
-    begin
-      expo_patch_react_imports!(installer)
-    rescue => e
-      Pod::UI.warn e
-    end
-  end
+
   config = use_native_modules!
 
   permissions_path = '../node_modules/react-native-permissions/ios'
@@ -35,6 +30,19 @@ target 'coinswallet' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+    target 'coinswallet' do
+        post_integrate do |installer|
+           begin
+             expo_patch_react_imports!(installer)
+           rescue => e
+             Pod::UI.warn e
+           end
+         end
+    end
+
+    target 'kimlwallet' do
+    end
 
   target 'coinswalletTests' do
     inherit! :complete
@@ -57,7 +65,7 @@ target 'coinswallet' do
        end
 
        framework_paths = [
-         "Pods/LogRocket/LogRocket.xcframework/ios-arm64/LogRocket.framework/LogRocket",
+#          "Pods/LogRocket/LogRocket.xcframework/ios-arm64/LogRocket.framework/LogRocket",
          "Pods/hermes-engine/destroot/Library/Frameworks/macosx/hermes.framework/hermes",
          "Pods/hermes-engine/destroot/Library/Frameworks/macosx/hermes.framework/Versions/Current/hermes",
          "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework/ios-arm64/hermes.framework/hermes",

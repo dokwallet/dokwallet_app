@@ -4,6 +4,7 @@ import myStyles from './DialogExchangeStyles';
 import {Modal} from 'react-native-paper';
 import {useContext} from 'react';
 import {ThemeContext} from 'theme/ThemeContext';
+import {WL_APP_NAME} from 'utils/wlData';
 
 const WIDTH = Dimensions.get('window').width + 80;
 const ITEM_WIDTH = Math.round(WIDTH * 0.7);
@@ -56,7 +57,7 @@ const DialogExchange = ({visible, hideDialog, data}) => {
       <View style={styles.modalView}>
         <View style={styles.titleContainer}>
           <ProfileIcon width={24} height={24} />
-          <Text style={styles.titleText}>DokWallet</Text>
+          <Text style={styles.titleText}>{WL_APP_NAME}</Text>
         </View>
         <Text style={styles.modalText}>{data.firstLine}</Text>
         <Text style={styles.modalText}>{data.secondLine}</Text>

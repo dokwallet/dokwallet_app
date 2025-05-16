@@ -4,6 +4,7 @@ import myStyles from './ContactUsStyles';
 import {ThemeContext} from 'theme/ThemeContext';
 import WalletConnectItem from 'components/WalletConnectItem';
 import {DokSafeAreaView} from 'components/DokSafeAreaView';
+import {CONTACT_DETAILS} from 'utils/wlData';
 
 const ContactUs = ({navigation}) => {
   const {theme} = useContext(ThemeContext);
@@ -11,7 +12,7 @@ const ContactUs = ({navigation}) => {
 
   const onPressContactViaEmail = useCallback(async () => {
     try {
-      await Linking.openURL('mailto:support@dokwallet.com');
+      await Linking.openURL(`mailto:${CONTACT_DETAILS.email}`);
     } catch (e) {
       console.error('error in open emails', e);
     }
@@ -19,7 +20,9 @@ const ContactUs = ({navigation}) => {
 
   const onPressContactViaTelegram = useCallback(async () => {
     try {
-      await Linking.openURL('https://t.me/dokwallet');
+      if (CONTACT_DETAILS.telegram) {
+        await Linking.openURL(CONTACT_DETAILS.telegram);
+      }
     } catch (e) {
       console.error('error in open Telegram', e);
     }
@@ -41,12 +44,16 @@ const ContactUs = ({navigation}) => {
             onPress={onPressContactViaEmail}>
             <Text style={styles.buttonTitle}>{'Contact via Email'}</Text>
           </TouchableOpacity>
-          <Text style={styles.descriptions}>{'OR'}</Text>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={onPressContactViaTelegram}>
-            <Text style={styles.buttonTitle}>{'Contact via Telegram'}</Text>
-          </TouchableOpacity>
+          {!!CONTACT_DETAILS.telegram && (
+            <>
+              <Text style={styles.descriptions}>{'OR'}</Text>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={onPressContactViaTelegram}>
+                <Text style={styles.buttonTitle}>{'Contact via Telegram'}</Text>
+              </TouchableOpacity>
+            </>
+          )}
           <View style={styles.borderView} />
           <WalletConnectItem />
         </ScrollView>

@@ -48,7 +48,7 @@ const Notifications = () => {
             value={isReceived}
             onValueChange={onToggleSwitchReceive}
             trackColor={{false: 'gray', true: '#E8E8E8'}}
-            thumbColor={isSent ? '#F44D03' : 'white'}
+            thumbColor={isSent ? theme.background : 'white'}
             ios_backgroundColor="#E8E8E8"
           />
         </View>
@@ -67,7 +67,7 @@ const Notifications = () => {
             value={isSent}
             onValueChange={onToggleSwitchSent}
             trackColor={{false: 'gray', true: '#E8E8E8'}}
-            thumbColor={isSent ? '#F44D03' : 'white'}
+            thumbColor={isSent ? theme.background : 'white'}
             ios_backgroundColor="#E8E8E8"
           />
         </View>

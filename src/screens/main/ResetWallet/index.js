@@ -1,35 +1,14 @@
 import myStyles from './ResetWalletStyles';
-import React, {useContext, useLayoutEffect} from 'react';
+import React, {useContext} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import Create from 'assets/images/icons/reset_create.svg';
-import Import from 'assets/images/icons/reset_import.svg';
-import Plus from 'assets/images/icons/plus.svg';
-import ArrowRight from 'assets/images/icons/arrowright.svg';
-import ArrowRightDark from 'assets/images/icons/arrowright_dark.svg';
-
 import {ThemeContext} from 'theme/ThemeContext';
-import {useDispatch} from 'react-redux';
 import {DokSafeAreaView} from 'components/DokSafeAreaView';
+import {CREATE_WALLET, IMPORT_WALLET} from 'utils/wlData';
 
 const ResetWallet = ({navigation, route}) => {
   const {theme} = useContext(ThemeContext);
   const styles = myStyles(theme);
   const isFromOnBoarding = route?.params?.isFromOnBoarding;
-  const dispatch = useDispatch();
-
-  useLayoutEffect(() => {
-    if (isFromOnBoarding) {
-      navigation.setOptions({
-        headerShown: false,
-      });
-    } else {
-      navigation.setOptions({
-        headerShown: true,
-      });
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isFromOnBoarding]);
 
   return (
     <DokSafeAreaView style={styles.safeAreaView}>
@@ -55,24 +34,12 @@ const ResetWallet = ({navigation, route}) => {
               activeOpacity={1}
               onPress={() => {
                 navigation.navigate('CreateWallet');
-                // if (isFromOnBoarding) {
-                //   navigation.navigate('VerifyInfoModal');
-                // } else {
-                //   setTimeout(() => {
-                //     dispatch(loadingOn());
-                //     navigation.push('VerifyInfoModal', {
-                //       reset: 'CreateWallet',
-                //     });
-                //   }, 200);
-                // }
               }}
               style={{
                 ...styles.btn,
                 ...styles.shadow,
-                backgroundColor: '#FF4C00',
               }}>
-              <Plus height="17" width="17" style={styles.icon_plus} />
-              <Create width="113" height="113" style={styles.icon_create} />
+              <CREATE_WALLET height={150} width={150} />
               <View style={styles.textBox}>
                 <Text style={{...styles.textBtn, color: theme.font}}>
                   Create
@@ -95,14 +62,8 @@ const ResetWallet = ({navigation, route}) => {
               style={{
                 ...styles.btn,
                 ...styles.shadow,
-                backgroundColor: theme.font,
               }}>
-              {theme.backgroundColor === '#121212' ? (
-                <ArrowRightDark style={styles.icon_arrow} />
-              ) : (
-                <ArrowRight style={styles.icon_arrow} />
-              )}
-              <Import width="108" height="101" style={styles.icon_create} />
+              <IMPORT_WALLET height={150} width={150} />
               <View style={styles.textBox2}>
                 <Text
                   style={{

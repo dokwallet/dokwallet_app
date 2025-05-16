@@ -16,6 +16,10 @@ if (isIpad) {
 
 const myStyles = theme =>
   StyleSheet.create({
+    safeAreaView: {
+      flex: 1,
+      backgroundColor: theme.backgroundColor,
+    },
     container: {
       flex: 1,
       backgroundColor: theme.backgroundColor,
@@ -81,7 +85,6 @@ const myStyles = theme =>
     //////////////Item////////////
     caruselList: {
       width: ITEM_WIDTH,
-      marginTop: 20,
       alignSelf: 'center',
     },
     box: {

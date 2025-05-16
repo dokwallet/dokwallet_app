@@ -9,12 +9,13 @@ import {
 } from 'react-native';
 import {useSelector} from 'react-redux';
 import {getDisableMessage} from 'dok-wallet-blockchain-networks/redux/cryptoProviders/cryptoProvidersSelectors';
+import {CONTACT_DETAILS} from 'utils/wlData';
 
 const DisableComponent = () => {
   const disableMessage = useSelector(getDisableMessage);
   const onPressContactViaEmail = useCallback(async () => {
     try {
-      await Linking.openURL('mailto:support@dokwallet.com');
+      await Linking.openURL(`mailto:${CONTACT_DETAILS.email}`);
     } catch (e) {
       console.error('error in open emails', e);
     }
@@ -22,7 +23,9 @@ const DisableComponent = () => {
 
   const onPressContactViaTelegram = useCallback(async () => {
     try {
-      await Linking.openURL('https://t.me/dokwallet');
+      if (CONTACT_DETAILS.telegram) {
+        await Linking.openURL(CONTACT_DETAILS.telegram);
+      }
     } catch (e) {
       console.error('error in open Telegram', e);
     }

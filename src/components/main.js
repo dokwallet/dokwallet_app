@@ -1,5 +1,11 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {Platform, Linking, Text, TextInput} from 'react-native';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import {Platform, Linking, Text, TextInput, StatusBar} from 'react-native';
 import {shallowEqual, useDispatch, useSelector} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {useRoute} from 'routers/router';
@@ -67,6 +73,8 @@ import DisableComponent from 'components/DisableComponent';
 import {getLastUpdateCheckTimestamp} from 'dok-wallet-blockchain-networks/redux/auth/authSelectors';
 import {setLastUpdateCheckTimestamp} from 'dok-wallet-blockchain-networks/redux/auth/authSlice';
 import {getFeesInfo} from 'dok-wallet-blockchain-networks/feesInfo/feesInfo';
+import {WALLET_CONNECT_DATA} from 'utils/wlData';
+import {ThemeContext} from 'theme/ThemeContext';
 
 const unsecureRoute = [
   'ContactUs',
@@ -130,22 +138,10 @@ const Main = () => {
 
   const initializeWalletConnect = useCallback(async () => {
     try {
-      const walletConnectData = {
-        id: process.env.WALLET_CONNECT_ID,
-        metadata: {
-          description: 'Dokwallet',
-          icons: [
-            'https://moreover4u2-wl-resources.s3.eu-north-1.amazonaws.com/dokwallet/dokwallet_200.png',
-          ],
-          name: 'Dokwallet',
-          ssl: true,
-          url: 'https://dokwallet.com',
-        },
-      };
       if (!Object.keys(walletConnectSessions).length) {
         await clearWalletConnectStorageCache();
       }
-      await initWalletConnect(walletConnectData);
+      await initWalletConnect(WALLET_CONNECT_DATA);
       dispatch(setIsWalletConnectInitialized(true));
     } catch (e) {
       console.error('Error in initialize WalletConnect');
@@ -325,9 +321,16 @@ const Main = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const {theme} = useContext(ThemeContext);
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
+      <StatusBar
+        backgroundColor={theme.backgroundColor}
+        barStyle={
+          theme.backgroundColor === '#121212' ? 'light-content' : 'dark-content'
+        }
+      />
       {disableMessage ? (
         <DisableComponent />
       ) : (

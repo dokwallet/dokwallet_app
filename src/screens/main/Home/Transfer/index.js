@@ -361,7 +361,10 @@ const Transfer = ({navigation, route}) => {
   );
 
   const onChangeCustomFees = text => {
-    const tempValues = validateNumberInInput(text);
+    const tempValues = validateNumberInInput(
+      text,
+      transferData?.currentCoin?.decimal,
+    );
     setCustomFees(tempValues || '0');
     dispatch(updateFees({gasPrice: tempValues || '0', convertedChainName}));
   };
@@ -967,7 +970,9 @@ const Transfer = ({navigation, route}) => {
                 style={{
                   ...styles.button,
                   backgroundColor:
-                    isDisabled || isFetchingFeesAgain ? '#708090' : '#F44D03',
+                    isDisabled || isFetchingFeesAgain
+                      ? '#708090'
+                      : theme.background,
                 }}
                 onPress={handleSubmitForm}>
                 <Text style={styles.buttonTitle}>Confirm</Text>

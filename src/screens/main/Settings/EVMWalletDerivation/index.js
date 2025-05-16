@@ -59,7 +59,7 @@ const EVMWalletDerivation = () => {
                     }
                   }}
                   trackColor={{false: 'gray', true: '#E8E8E8'}}
-                  thumbColor={item.isEVMAddressesAdded ? '#F44D03' : 'white'}
+                  thumbColor={item.isEVMAddressesAdded ? theme.background : 'white'}
                   ios_backgroundColor="#E8E8E8"
                 />
               </View>

@@ -2,7 +2,6 @@ import {IS_ANDROID} from 'utils/dimensions';
 import {sha256} from 'react-native-sha256';
 import {getBuildNumber, getVersion} from 'react-native-device-info';
 import crypto from 'react-native-quick-crypto';
-import {isEVMChain} from 'dok-wallet-blockchain-networks/helper';
 
 export const inAppBrowserOptions = IS_ANDROID
   ? {
@@ -11,7 +10,7 @@ export const inAppBrowserOptions = IS_ANDROID
     }
   : {modalEnabled: true};
 
-export async function generateSHA256ForCoins(coins) {
+export async function generateSHA256ForCoins(coins, isEVMChain) {
   const coinData = Array.isArray(coins) ? coins : [];
   if (coinData.length) {
     let coinNames = [];

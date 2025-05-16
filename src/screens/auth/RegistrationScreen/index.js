@@ -14,6 +14,7 @@ import {ThemeContext} from 'theme/ThemeContext';
 import RNScreenshotPrevent from 'react-native-screenshot-prevent';
 import {useIsFocused} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
+import {DokSafeAreaView} from 'components/DokSafeAreaView';
 
 export const RegistrationScreen = ({navigation}) => {
   const {theme} = useContext(ThemeContext);
@@ -46,7 +47,7 @@ export const RegistrationScreen = ({navigation}) => {
   }, [isFocused]);
 
   return (
-    <>
+    <DokSafeAreaView style={styles.safeAreaView}>
       <View style={styles.container}>
         <View style={styles.formInput}>
           <Text
@@ -146,6 +147,6 @@ export const RegistrationScreen = ({navigation}) => {
           </Formik>
         </View>
       </View>
-    </>
+    </DokSafeAreaView>
   );
 };

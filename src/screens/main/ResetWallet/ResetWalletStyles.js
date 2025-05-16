@@ -54,11 +54,10 @@ const myStyles = theme =>
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
-      padding: 10,
+      paddingVertical: 12,
     },
     btn: {
       borderRadius: 10,
-      position: 'relative',
       width: 150,
       height: 150,
     },
@@ -89,24 +88,6 @@ const myStyles = theme =>
     textBtn: {
       fontSize: 17,
       fontFamily: 'Roboto-Regular',
-    },
-    icon_plus: {
-      fill: theme.backgroundColor,
-      position: 'absolute',
-      top: '5%',
-      left: '4%',
-    },
-    icon_create: {
-      position: 'absolute',
-      left: '18.53%',
-      right: '6.07%',
-      top: '12.8%',
-      bottom: '11.43%',
-    },
-    icon_arrow: {
-      position: 'absolute',
-      left: '4%',
-      top: '7%',
     },
   });
 

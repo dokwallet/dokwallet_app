@@ -51,7 +51,7 @@ const PrivacyMode = () => {
                   dispatch(togglePrivacyMode({walletIndex: index}));
                 }}
                 trackColor={{false: 'gray', true: '#E8E8E8'}}
-                thumbColor={item.privacyMode ? '#F44D03' : 'white'}
+                thumbColor={item.privacyMode ? theme.background : 'white'}
                 ios_backgroundColor="#E8E8E8"
               />
             </View>

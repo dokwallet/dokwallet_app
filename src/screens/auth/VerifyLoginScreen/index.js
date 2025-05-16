@@ -20,6 +20,7 @@ import {ThemeContext} from 'theme/ThemeContext';
 import myStyles from './VerifyLoginScreenStyles';
 import RNScreenshotPrevent from 'react-native-screenshot-prevent';
 import {IS_IOS} from 'utils/dimensions';
+import {WL_APP_NAME} from "utils/wlData";
 
 export const VerifyLoginScreen = ({navigation}) => {
   const {theme} = useContext(ThemeContext);
@@ -45,7 +46,7 @@ export const VerifyLoginScreen = ({navigation}) => {
     if (fingerprint) {
       try {
         const isAuth = await FingerprintScanner.authenticate({
-          description: 'Unlock Dok Wallet with your fingerprint',
+          description: `Unlock ${WL_APP_NAME} with your fingerprint`,
         });
 
         dispatch(fingerprintAuthSuccess(isAuth));

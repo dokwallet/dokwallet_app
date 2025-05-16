@@ -94,6 +94,12 @@ def getMyVersionName = { ->
 
 
 android {
+    def keystorePropertiesFile = rootProject.file("keystore.properties")
+    def keystoreProperties = new Properties()
+    if (keystorePropertiesFile.exists()) {
+        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    }
+
     lintOptions {
         abortOnError false
     }
@@ -128,30 +134,61 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        release {
+        dokwalletRelease {
             // Uncomment this if you make build locally.
             if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
-                storeFile file(System.getenv()["CM_KEYSTORE_PATH"])
-                storePassword System.getenv()["CM_KEYSTORE_PASSWORD"]
-                keyAlias System.getenv()["CM_KEY_ALIAS"]
-                keyPassword System.getenv()["CM_KEY_PASSWORD"]
-            } else if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
-                storeFile file(MYAPP_UPLOAD_STORE_FILE)
-                storePassword MYAPP_UPLOAD_STORE_PASSWORD
-                keyAlias MYAPP_UPLOAD_KEY_ALIAS
-                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+                storeFile file(System.getenv()["CM_DOKWALLET_STORE_FILE"])
+                storePassword System.getenv()["CM_DOKWALLET_STORE_PASSWORD"]
+                keyAlias System.getenv()["CM_DOKWALLET_KEY_ALIAS"]
+                keyPassword System.getenv()["CM_DOKWALLET_KEY_PASSWORD"]
+            }else if (keystoreProperties.containsKey('DOKWALLET_UPLOAD_STORE_FILE')) {
+                storeFile file(keystoreProperties['DOKWALLET_UPLOAD_STORE_FILE'])
+                storePassword keystoreProperties['DOKWALLET_UPLOAD_STORE_PASSWORD']
+                keyAlias keystoreProperties['DOKWALLET_UPLOAD_KEY_ALIAS']
+                keyPassword keystoreProperties['DOKWALLET_UPLOAD_KEY_PASSWORD']
             }
+        }
+        kimlwalletRelease {
+            // Uncomment this if you make build locally.
+            if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
+                storeFile file(System.getenv()["CM_KIMLWALLET_STORE_FILE"])
+                storePassword System.getenv()["CM_KIMLWALLET_STORE_PASSWORD"]
+                keyAlias System.getenv()["CM_KIMLWALLET_KEY_ALIAS"]
+                keyPassword System.getenv()["CM_KIMLWALLET_KEY_PASSWORD"]
+            } else if (keystoreProperties.containsKey('KIMLWALLET_UPLOAD_STORE_FILE')) {
+                storeFile file(keystoreProperties['KIMLWALLET_UPLOAD_STORE_FILE'])
+                storePassword keystoreProperties['KIMLWALLET_UPLOAD_STORE_PASSWORD']
+                keyAlias keystoreProperties['KIMLWALLET_UPLOAD_KEY_ALIAS']
+                keyPassword keystoreProperties['KIMLWALLET_UPLOAD_KEY_PASSWORD']
+            }
+        }
+    }
+    flavorDimensions = ["default"]
+    productFlavors {
+        dokwallet {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.dok.wallet"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.coinswallet"
+            signingConfig signingConfigs.dokwalletRelease
+        }
+        kimlwallet {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.kimlwallet"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.coinswallet"
+            signingConfig signingConfigs.kimlwalletRelease
         }
     }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
             manifestPlaceholders = [usesCleartextTraffic:"true"]
+            matchingFallbacks = ['debug', 'release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             manifestPlaceholders = [usesCleartextTraffic:"false"]

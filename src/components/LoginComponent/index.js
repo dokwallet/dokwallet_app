@@ -12,6 +12,7 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
   AppState,
+  SafeAreaView,
 } from 'react-native';
 import {TextInput} from 'react-native-paper';
 import {Formik} from 'formik';
@@ -22,8 +23,6 @@ import {
   loadingOff,
 } from 'dok-wallet-blockchain-networks/redux/auth/authSlice';
 import {getUserPassword} from 'dok-wallet-blockchain-networks/redux/auth/authSelectors';
-import LogoLight from 'assets/images/screens/login.svg';
-import LogoDark from 'assets/images/screens/login_dark.svg';
 import {validationSchemaLogin} from 'utils/validationSchema';
 import ModalReset from 'components/ModalReset';
 import {isFingerprint} from 'dok-wallet-blockchain-networks/redux/settings/settingsSelectors';
@@ -34,6 +33,7 @@ import myStyles from './LoginScreenStyles';
 import {selectAllWallets} from 'dok-wallet-blockchain-networks/redux/wallets/walletsSelector';
 import RNScreenshotPrevent from 'react-native-screenshot-prevent';
 import {isNoUpdateAvailable} from 'dok-wallet-blockchain-networks/redux/extraData/extraSelectors';
+import {LOGO, LOGO_DARK, WL_APP_NAME} from 'utils/wlData';
 
 const LoginComponent = ({navigation, onClose, visible}) => {
   const {theme} = useContext(ThemeContext);
@@ -78,7 +78,7 @@ const LoginComponent = ({navigation, onClose, visible}) => {
     if (fingerprint && isNoAppUpdate) {
       try {
         const isAuth = await FingerprintScanner.authenticate({
-          description: 'Unlock Dok Wallet with your fingerprint',
+          description: `Unlock ${WL_APP_NAME} with your fingerprint`,
         });
         dispatch(fingerprintAuthSuccess(isAuth));
         if (hasWallet()) {
@@ -150,18 +150,12 @@ const LoginComponent = ({navigation, onClose, visible}) => {
   };
 
   return (
-    <>
+    //use this safeareaview don't use other
+    <SafeAreaView style={styles.safeAreaView}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
           <View style={styles.formInput}>
-            <Text
-              style={{
-                ...styles.brand,
-                marginTop: floatingBtnHeight > 300 ? 20 : 0,
-              }}>
-              DOK WALLET
-            </Text>
-            {theme.backgroundColor === '#121212' ? <LogoDark /> : <LogoLight />}
+            {theme.backgroundColor === '#121212' ? <LOGO_DARK /> : <LOGO />}
             <Text style={styles.title}>Sign in</Text>
             <Formik
               initialValues={{password: ''}}
@@ -248,7 +242,7 @@ const LoginComponent = ({navigation, onClose, visible}) => {
         navigation={navigation}
         page={'Forgot'}
       />
-    </>
+    </SafeAreaView>
   );
 };
 export default LoginComponent;

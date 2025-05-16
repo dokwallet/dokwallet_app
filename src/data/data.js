@@ -1,23 +1,32 @@
+import {
+  CARD,
+  CARD_2,
+  ONBOARDING_1,
+  ONBOARDING_2,
+  ONBOARDING_3,
+  ONBOARDING_4,
+} from 'utils/wlData';
+
 const data = [
   {
     title: 'Multi-currency Support',
     body: 'Store, send, receive and exchange primary crypto currencies like BTC, LTC, ETH and more.',
-    src: require('assets/images/screens/register1.png'),
+    src: ONBOARDING_1,
   },
   {
     title: 'Buy Crypto',
     body: 'Buy crypto directly from the app with a credit/debit card!',
-    src: require('assets/images/screens/register2.png'),
+    src: ONBOARDING_2,
   },
   {
     title: 'Convenient biometric authentication login',
     body: 'Keep all your assets secure with our biometric authentication-based login.',
-    src: require('assets/images/screens/register3.png'),
+    src: ONBOARDING_3,
   },
   {
     title: 'The best place to store your crypto assets.',
     body: 'Store all your crypto assets in one place with our user-friendly wallet.',
-    src: require('assets/images/screens/register4.png'),
+    src: ONBOARDING_4,
   },
 ];
 
@@ -44,9 +53,9 @@ export const wallet = [
 
 export const cards = [
   {
-    src: require('assets/images/buy/card.png'),
+    src: CARD,
   },
   {
-    src: require('assets/images/buy/card2.png'),
+    src: CARD_2,
   },
 ];

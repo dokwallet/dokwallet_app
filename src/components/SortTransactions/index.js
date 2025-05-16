@@ -122,7 +122,9 @@ const SortTransactions = ({visible, hideModal, onPressAppy}) => {
                 onPress={() => {
                   setValue(item.label);
                 }}
-                checkedIcon={<RadioOn width="25" height="25" color="#F44D03" />}
+                checkedIcon={
+                  <RadioOn width="25" height="25" color={theme.background} />
+                }
                 uncheckedIcon={
                   <Icon
                     name="circle-o"
@@ -130,7 +132,7 @@ const SortTransactions = ({visible, hideModal, onPressAppy}) => {
                     color={theme.carouselPoints}
                   />
                 }
-                checkedColor="#F44D03"
+                checkedColor={theme.background}
               />
             </View>
             <Text style={styles.item}>{item.label}</Text>
@@ -158,11 +160,13 @@ const SortTransactions = ({visible, hideModal, onPressAppy}) => {
               onPress={() => {
                 setStatus(el.label);
               }}
-              checkedIcon={<RadioOn width="25" height="25" color="#F44D03" />}
+              checkedIcon={
+                <RadioOn width="25" height="25" color={theme.background} />
+              }
               uncheckedIcon={
                 <Icon name="circle-o" size={24} color={theme.carouselPoints} />
               }
-              checkedColor="#F44D03"
+              checkedColor={theme.background}
             />
             <Text style={styles.item}>{el.label}</Text>
           </View>

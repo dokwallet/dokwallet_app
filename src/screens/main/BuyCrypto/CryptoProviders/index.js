@@ -354,7 +354,7 @@ const CryptoProviders = () => {
                       />
                       <TextInput
                         style={styles.input}
-                        label="Amount"
+                        label="    Amount"
                         textColor={theme.font}
                         theme={{
                           colors: {
@@ -371,7 +371,10 @@ const CryptoProviders = () => {
                         blurOnSubmit={false}
                         name="amount"
                         onChangeText={text => {
-                          const tempValues = validateNumberInInput(text);
+                          const tempValues = validateNumberInInput(
+                            text,
+                            values?.selectedCoin?.options?.decimal,
+                          );
                           setFieldValue('amount', tempValues);
                           onSubmit(
                             {...values, amount: tempValues},

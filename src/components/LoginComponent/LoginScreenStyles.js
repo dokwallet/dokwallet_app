@@ -14,6 +14,10 @@ if (isIpad) {
 
 const myStyles = theme =>
   StyleSheet.create({
+    safeAreaView: {
+      flex: 1,
+      backgroundColor: theme.backgroundColor,
+    },
     container: {
       flex: 1,
       backgroundColor: theme.backgroundColor,
@@ -22,7 +26,7 @@ const myStyles = theme =>
     },
     formInput: {
       width: inputWidth,
-      marginTop: 40,
+      marginTop: 16,
     },
     brand: {
       color: theme.font,
@@ -38,7 +42,7 @@ const myStyles = theme =>
     title: {
       color: theme.font,
       fontSize: 30,
-      marginBottom: 10,
+      marginVertical: 16,
       textAlign: 'left',
       fontFamily: 'Roboto-Regular',
       fontWeight: 'bold',

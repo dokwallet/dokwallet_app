@@ -41,7 +41,7 @@ const CryptoRadioButton = ({setValueRadioBtn}) => {
             }}
             checkedIcon="dot-circle-o"
             uncheckedIcon="circle-o"
-            checkedColor="#F44D03"
+            checkedColor={theme.background}
           />
           <Text style={styles.item}>{item.label}</Text>
         </View>

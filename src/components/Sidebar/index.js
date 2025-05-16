@@ -12,10 +12,6 @@ import ResetWallet from 'screens/main/ResetWallet';
 import Settings from 'screens/main/Settings';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import BackIcon from 'assets/images/sidebarIcons/Back.svg';
-import QRCodeIcon from 'assets/images/sidebarIcons/QRCode.svg';
-import LogoIcon from 'assets/images/sidebarIcons/LogoSingle.svg';
-import LogoIconDark from 'assets/images/sidebarIcons/LogoSingleDark.svg';
-import BurgerMenuIcon from 'assets/images/sidebarIcons/BurgerMenu.svg';
 import HomeIcon from 'assets/images/sidebarIcons/Home.svg';
 import BuyCryptoIcon from 'assets/images/sidebarIcons/BuyCrypto.svg';
 import SettingsIcon from 'assets/images/sidebarIcons/Settings.svg';
@@ -87,7 +83,7 @@ export default function Sidebar({navigation, route}) {
           <DrawerItem
             icon={({focused}) => (
               <ResetWalletIcon
-                fill={focused ? '#FF4500' : theme.sidebarIcon}
+                fill={focused ? theme.background : theme.sidebarIcon}
                 style={{marginVertical: -4}}
               />
             )}
@@ -124,7 +120,7 @@ export default function Sidebar({navigation, route}) {
                 <LogOutIcon
                   width="25"
                   height="26"
-                  // fill={focused ? '#FF4500' : theme.sidebarIcon}
+                  // fill={focused ? theme.background : theme.sidebarIcon}
                   // style={{marginVertical: -4, marginLeft: -4}}
                 />
               )
@@ -176,7 +172,7 @@ export default function Sidebar({navigation, route}) {
           drawerItemStyle: {
             marginBottom: -2,
           },
-          drawerActiveTintColor: '#FF4500',
+          drawerActiveTintColor: theme.background,
           drawerInactiveTintColor:
             theme.backgroundColor === '#121212' ? '#FFFFFF' : '#989898',
           drawerLabelStyle: {
@@ -194,7 +190,7 @@ export default function Sidebar({navigation, route}) {
             headerShown: false,
             drawerLabel: 'Home',
             drawerIcon: ({focused}) => (
-              <HomeIcon fill={focused ? '#FF4500' : theme.font} />
+              <HomeIcon fill={focused ? theme.background : theme.font} />
             ),
           })}
         />
@@ -226,7 +222,7 @@ export default function Sidebar({navigation, route}) {
                 <BuyCryptoIcon
                   width="25"
                   height="26"
-                  fill={focused ? '#FF4500' : theme.sidebarIcon}
+                  fill={focused ? theme.background : theme.sidebarIcon}
                 />
               ),
             })}
@@ -259,7 +255,7 @@ export default function Sidebar({navigation, route}) {
                 <BuyCryptoIcon
                   width="25"
                   height="26"
-                  fill={focused ? '#FF4500' : theme.sidebarIcon}
+                  fill={focused ? theme.background : theme.sidebarIcon}
                 />
               ),
             })}
@@ -292,7 +288,7 @@ export default function Sidebar({navigation, route}) {
                 <ConvertIcon
                   width="25"
                   height="26"
-                  fill={focused ? '#FF4500' : theme.sidebarIcon}
+                  fill={focused ? theme.background : theme.sidebarIcon}
                 />
               ),
             })}
@@ -323,7 +319,7 @@ export default function Sidebar({navigation, route}) {
               <BuyCryptoIcon
                 width="25"
                 height="26"
-                fill={focused ? '#FF4500' : theme.sidebarIcon}
+                fill={focused ? theme.background : theme.sidebarIcon}
               />
             ),
           })}
@@ -348,7 +344,9 @@ export default function Sidebar({navigation, route}) {
             ),
             headerTitleAlign: 'center',
             drawerIcon: ({focused}) => (
-              <WallestIcon fill={focused ? '#FF4500' : theme.sidebarIcon} />
+              <WallestIcon
+                fill={focused ? theme.background : theme.sidebarIcon}
+              />
             ),
           })}
         />
@@ -375,7 +373,7 @@ export default function Sidebar({navigation, route}) {
             headerTitleAlign: 'center',
             drawerIcon: ({focused}) => (
               <WalletConnectIcon
-                fill={focused ? '#FF4500' : theme.sidebarIcon}
+                fill={focused ? theme.background : theme.sidebarIcon}
               />
             ),
           })}
@@ -405,7 +403,7 @@ export default function Sidebar({navigation, route}) {
               <Entypo
                 name={'link'}
                 size={24}
-                color={focused ? '#FF4500' : theme.sidebarIcon}
+                color={focused ? theme.background : theme.sidebarIcon}
               />
             ),
           }}
@@ -430,7 +428,7 @@ export default function Sidebar({navigation, route}) {
               </TouchableOpacity>
             ),
             drawerIcon: ({focused}) => (
-              <InfoIcon fill={focused ? '#FF4500' : theme.sidebarIcon} />
+              <InfoIcon fill={focused ? theme.background : theme.sidebarIcon} />
             ),
           }}
         />
@@ -456,7 +454,9 @@ export default function Sidebar({navigation, route}) {
             headerTitle: 'Contact Us',
             headerTitleAlign: 'center',
             drawerIcon: ({focused}) => (
-              <ContactUsIcon fill={focused ? '#FF4500' : theme.sidebarIcon} />
+              <ContactUsIcon
+                fill={focused ? theme.background : theme.sidebarIcon}
+              />
             ),
           })}
         />
@@ -482,7 +482,7 @@ export default function Sidebar({navigation, route}) {
             ),
             drawerIcon: ({focused}) => (
               <TouchableOpacity onPress={focused && setModal(true)}>
-                <ResetWalletIcon fill={focused ? '#FF4500' : '#989898'} />
+                <ResetWalletIcon fill={focused ? theme.background : '#989898'} />
               </TouchableOpacity>
             ),
           })}
@@ -507,7 +507,9 @@ export default function Sidebar({navigation, route}) {
               </TouchableOpacity>
             ),
             drawerIcon: ({focused}) => (
-              <SettingsIcon fill={focused ? '#FF4500' : theme.sidebarIcon} />
+              <SettingsIcon
+                fill={focused ? theme.background : theme.sidebarIcon}
+              />
             ),
           }}
         />

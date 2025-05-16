@@ -236,7 +236,7 @@ const Settings = ({navigation}) => {
               value={isSwitchOn}
               onValueChange={onToggleSwitch}
               trackColor={{false: 'gray', true: '#E8E8E8'}}
-              thumbColor={isSwitchOn ? '#F44D03' : 'white'}
+              thumbColor={isSwitchOn ? theme.background : 'white'}
               ios_backgroundColor="#E8E8E8"
             />
           </View>
@@ -345,7 +345,7 @@ const Settings = ({navigation}) => {
               value={feesOptions}
               onValueChange={onChangeFeesOptions}
               trackColor={{false: 'gray', true: '#E8E8E8'}}
-              thumbColor={feesOptions ? '#F44D03' : 'white'}
+              thumbColor={feesOptions ? theme.background : 'white'}
               ios_backgroundColor="#E8E8E8"
             />
           </View>
@@ -379,7 +379,7 @@ const Settings = ({navigation}) => {
               value={chatOptions}
               onValueChange={onChangeChatOptions}
               trackColor={{false: 'gray', true: '#E8E8E8'}}
-              thumbColor={chatOptions ? '#F44D03' : 'white'}
+              thumbColor={chatOptions ? theme.background : 'white'}
               ios_backgroundColor="#E8E8E8"
             />
           </View>
@@ -411,7 +411,7 @@ const Settings = ({navigation}) => {
               value={searchInHomeScreen}
               onValueChange={onChangeSearchOptionsHomeScreen}
               trackColor={{false: 'gray', true: '#E8E8E8'}}
-              thumbColor={searchInHomeScreen ? '#F44D03' : 'white'}
+              thumbColor={searchInHomeScreen ? theme.background : 'white'}
               ios_backgroundColor="#E8E8E8"
             />
           </View>

@@ -5,6 +5,7 @@ import {ThemeContext} from 'theme/ThemeContext';
 import myStyles from './ModalAppUpdates';
 import {IS_IOS} from 'utils/dimensions';
 import {getBundleId} from 'react-native-device-info';
+import {WL_APP_NAME} from 'utils/wlData';
 
 const WIDTH = Dimensions.get('window').width + 80;
 const {height: screenHeight} = Dimensions.get('window');
@@ -39,9 +40,8 @@ const ModalAppUpdate = ({visible}) => {
         <View style={styles.infoList}>
           <Text style={styles.titleInfo}>{'New Updates Available!'}</Text>
           <Text style={styles.info}>
-            {
-              'There is a new version of the Dok Wallet available on the App Store\nPlease update it to continue using app.'
-            }
+            {`There is a new version of the ${WL_APP_NAME} available on the App Store
+Please update it to continue using app.`}
           </Text>
         </View>
         <View style={styles.btnList}>

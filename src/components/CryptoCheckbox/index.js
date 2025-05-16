@@ -46,7 +46,7 @@ const CryptoCheckbox = ({
         iconType="material-community"
         checkedIcon="checkbox-marked"
         uncheckedIcon="checkbox-blank-outline"
-        checkedColor="#F44D03"
+        checkedColor={theme.background}
       />
 
       {number !== '3' ? (
