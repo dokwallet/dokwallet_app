@@ -99,6 +99,7 @@
     "fast-text-encoding": "^1.0.6",
     "filecoin.js": "^0.0.5-alpha",
     "formik": "^2.2.9",
+    "got": "^11.8.6",
     "levelup": "^5.1.1",
     "moralis": "^2.23.1",
     "nanoid": "^5.0.5",
@@ -212,7 +213,15 @@
   },
   "resolutions": {
     "react-native-permissions": "^3.8.0",
-    "elliptic": "^6.6.1"
+    "elliptic": "^6.6.1",
+    "got": "^11.8.6",
+    "@cosmjs/launchpad/axios": "^0.30.0",
+    "@cosmos-client/core/axios": "^0.30.0",
+    "@zondax/filecoin-signing-tools/axios": "^0.30.0",
+    "@xchainjs/xchain-client/axios": "^1.9.0",
+    "@xchainjs/xchain-cosmos/axios": "^1.9.0",
+    "@xchainjs/xchain-thorchain/axios": "^1.9.0",
+    "tronweb/axios": "^1.9.0"
   },
   "overrides": {
     "react-native-qrcode-scanner": {
