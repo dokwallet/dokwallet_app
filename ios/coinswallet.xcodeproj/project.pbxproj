@@ -139,7 +139,6 @@
 		D2F8280F2AB1EAEF004381E3 /* commonExternsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commonExternsion.swift; sourceTree = "<group>"; };
 		D2F849A82DC8D32F006B2140 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2F849A92DC8D32F006B2140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2F849AA2DC8D32F006B2140 /* kimlwallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kimlwallet.entitlements; sourceTree = "<group>"; };
 		D2F849B02DC8D334006B2140 /* coinswallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = coinswallet.entitlements; sourceTree = "<group>"; };
 		D2F849B12DC8D334006B2140 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2F849B22DC8D334006B2140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -352,7 +351,6 @@
 			children = (
 				D2F849A82DC8D32F006B2140 /* Images.xcassets */,
 				D2F849A92DC8D32F006B2140 /* Info.plist */,
-				D2F849AA2DC8D32F006B2140 /* kimlwallet.entitlements */,
 			);
 			path = kimlwallet;
 			sourceTree = "<group>";
@@ -1173,12 +1171,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = kimlwallet/kimlwallet.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Divyang Khatri (ZBWJFA97F3)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development: Divyang Khatri (75XS4RJ248)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HJ6G8C9BU;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N9US926Q47;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = kimlwallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "KIML Wallet";
@@ -1197,7 +1195,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kimlwallet;
 				PRODUCT_NAME = "KIML Wallet";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DokWalletDevProfile;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = kiml_wallet_dev_profile;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -1215,12 +1213,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = kimlwallet/kimlwallet.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Moreover4u2 Ltd (9HJ6G8C9BU)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KIML View Ltd (N9US926Q47)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HJ6G8C9BU;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N9US926Q47;
 				INFOPLIST_FILE = kimlwallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "KIML Wallet";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1238,7 +1236,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kimlwallet;
 				PRODUCT_NAME = "KIML Wallet";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DokWalletDistProfile;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = kiml_wallet_dist_profile;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;

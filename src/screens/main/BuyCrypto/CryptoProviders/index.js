@@ -235,48 +235,6 @@ const CryptoProviders = () => {
                   setFieldValue,
                 }) => (
                   <View>
-                    {IS_IOS && (
-                      <>
-                        <DokDropdown
-                          titleStyle={{color: theme.primary}}
-                          placeholder={'Select payment method'}
-                          title={'Select Payment Method'}
-                          data={paymentOptions}
-                          dropdownStyle={{height: 70}}
-                          onChangeValue={item => {
-                            setFieldValue('selectedPaymentMethod', item);
-                            onSubmit(
-                              {...values, selectedPaymentMethod: item},
-                              null,
-                              true,
-                              false,
-                            );
-                          }}
-                          value={values.selectedPaymentMethod?.value}
-                          renderItem={item => {
-                            return <PaymentOptionItem item={item} />;
-                          }}
-                          selectedTextStyle={{
-                            marginLeft: 12,
-                            color: theme.primary,
-                            fontWeight: '600',
-                            fontSize: 16,
-                          }}
-                          renderLeftIcon={() =>
-                            values.selectedPaymentMethod?.options?.icon && (
-                              <MaterialCommunityIcon
-                                name={
-                                  values.selectedPaymentMethod?.options?.icon
-                                }
-                                color={theme.font}
-                                size={32}
-                              />
-                            )
-                          }
-                        />
-                        <View style={styles.paddingView} />
-                      </>
-                    )}
                     <DokDropdown
                       titleStyle={{color: theme.primary}}
                       placeholder={'Select Crypto'}

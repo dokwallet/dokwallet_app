@@ -18,6 +18,13 @@ const WHITE_LABEL_ID_OBJ = {
 export const WHITE_LABEL_ID = WHITE_LABEL_ID_OBJ[wlName];
 setWhiteLabelIdToDokApi(WHITE_LABEL_ID);
 
+const IOS_APPSTORE_URL_OBJ = {
+  dokwallet: 'itms-apps://apps.apple.com/app/id1533065700?mt=8',
+  kimlwallet: 'itms-apps://apps.apple.com/app/id6746929530?mt=8',
+};
+
+export const IOS_APPSTORE_URL = IOS_APPSTORE_URL_OBJ[wlName];
+
 // Use static require paths inside a mapping
 const logoMap = {
   dokwallet: {

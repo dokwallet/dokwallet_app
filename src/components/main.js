@@ -27,6 +27,7 @@ import {AppState} from 'react-native';
 import {
   addMinutes,
   isAfterCurrentDate,
+  isNewerVersion,
   validateNumber,
 } from 'dok-wallet-blockchain-networks/helper';
 import {getLockTime} from 'dok-wallet-blockchain-networks/redux/settings/settingsSelectors';
@@ -165,7 +166,7 @@ const Main = () => {
 
   const getLiveVersion = useCallback(async () => {
     try {
-      let latestVersion = null;
+      let latestVersion = '';
       if (IS_IOS) {
         const resp = await axios.get(
           `https://itunes.apple.com/lookup?bundleId=${getBundleId()}`,
@@ -182,11 +183,7 @@ const Main = () => {
           latestVersion = matchNewLayout[1].trim();
         }
       }
-      const versionNumber = validateNumber(latestVersion);
-      if (!versionNumber) {
-        throw new Error('Version number is null');
-      }
-      return versionNumber;
+      return latestVersion;
     } catch (e) {
       console.error('Error in fetching latest version', e);
       throw e;
@@ -213,8 +210,8 @@ const Main = () => {
           dispatch(setLastUpdateCheckTimestamp(new Date()));
         }
         const liveVersion = await getLiveVersion();
-        const currentVersion = validateNumber(getVersion());
-        if (currentVersion < liveVersion) {
+        const currentVersion = getVersion();
+        if (isNewerVersion(liveVersion, currentVersion)) {
           setShowUpdateModal(true);
         } else {
           dispatch(setIsUpdateAvailable('no'));
