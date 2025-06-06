@@ -184,7 +184,7 @@ workflows:
         script: |
           xcode-project build-ipa \
             --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
-            --scheme "KIMLWALLET_XCODE_SCHEME"
+            --scheme "$KIMLWALLET_XCODE_SCHEME"
       - name: Publish Dok Wallet to App Store Connect
         script: |
           echo $DOKWALLET_AUTH_PRIVATE_KEY > DOKWALLET_PRIVATE_KEY.p8
