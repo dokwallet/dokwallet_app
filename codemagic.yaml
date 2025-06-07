@@ -185,6 +185,7 @@ workflows:
           agvtool new-marketing-version $KIMLWALLET_IOS_VERSION
       - name: KIML Wallet Build ipa for distribution
         script: |
+          cat -n "$CM_BUILD_DIR/ios/coinswallet.xcodeproj/project.pbxproj"
           xcode-project build-ipa \
             --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
             --scheme "$KIMLWALLET_XCODE_SCHEME"
@@ -212,6 +213,7 @@ workflows:
 
     artifacts:
       - build/ios/ipa/*.ipa
+      - /Users/builder/*.plist
       - /tmp/xcodebuild_logs/*.log
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
