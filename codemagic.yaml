@@ -109,7 +109,7 @@ workflows:
       ios_signing:
         provisioning_profiles:
           - dokwallet_prod_profile
-          - kimlwallet_prod_profile
+          - kiml_wallet_dist_profile
         certificates:
           - dokwallet_certificate
           - kimlwallet_certificate
@@ -205,7 +205,7 @@ workflows:
             --private-key @file:KIMLWALLET_PRIVATE_KEY.p8 \
             --key-id $KIMLWALLET_AUTH_KEY_ID \
             --issuer-id $KIMLWALLET_ISSUER_ID \
-            --submit-to-testflight    
+            --submit-to-testflight
 
     artifacts:
       - build/ios/ipa/*.ipa
