@@ -5,7 +5,7 @@ import {ThemeContext} from 'theme/ThemeContext';
 import myStyles from './ModalAppUpdates';
 import {IS_IOS} from 'utils/dimensions';
 import {getBundleId} from 'react-native-device-info';
-import {WL_APP_NAME} from 'utils/wlData';
+import {IOS_APPSTORE_URL, WL_APP_NAME} from 'utils/wlData';
 
 const WIDTH = Dimensions.get('window').width + 80;
 const {height: screenHeight} = Dimensions.get('window');
@@ -50,7 +50,7 @@ Please update it to continue using app.`}
             onPress={async () => {
               try {
                 const link = IS_IOS
-                  ? 'itms-apps://apps.apple.com/app/id1533065700?mt=8'
+                  ? IOS_APPSTORE_URL
                   : `https://play.google.com/store/apps/details?id=${getBundleId()}`;
                 await Linking.openURL(link);
               } catch (e) {

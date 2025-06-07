@@ -1006,7 +1006,7 @@ PODS:
     - React-Core
   - react-native-camera/RN (4.2.1):
     - React-Core
-  - react-native-compat (2.20.2):
+  - react-native-compat (2.20.3):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1041,7 +1041,7 @@ PODS:
     - React-Core
   - react-native-netinfo (9.5.0):
     - React-Core
-  - react-native-pager-view (6.7.1):
+  - react-native-pager-view (6.8.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1567,7 +1567,7 @@ PODS:
     - React-Core
   - RNShare (8.2.2):
     - React-Core
-  - RNSVG (15.11.2):
+  - RNSVG (15.12.0):
     - React-Core
   - RNTestFlight (1.1.0):
     - React-Core
@@ -2015,14 +2015,14 @@ SPEC CHECKSUMS:
   React-logger: 87cddd161bd9784d60fc5528f21c57ca07d2962a
   React-Mapbuffer: b6e208217a18044f0f1a183be8f6756ad67b42d7
   react-native-camera: 3eae183c1d111103963f3dd913b65d01aef8110f
-  react-native-compat: 6032264f1355d4c98aadd7a4b30e3a9a07f48227
+  react-native-compat: b927a8a02063c3a3852cd6e1982b2d8b252d5489
   react-native-config: 3367df9c1f25bb96197007ec531c7087ed4554c3
   react-native-fast-pbkdf2: 44d6ffa0346863e14100294004a1595ec76b2e9f
   react-native-fingerprint-scanner: ac6656f18c8e45a7459302b84da41a44ad96dbbe
   react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
   react-native-in-app-review: cf4a29c5a1d6bb28dd0d15f1fb1faa25e265bfb5
   react-native-netinfo: 48c5f79a84fbc3ba1d28a8b0d04adeda72885fa8
-  react-native-pager-view: 41e8ddc89e6ea77412d18abbfd16ee1d273bc056
+  react-native-pager-view: a61a2772271e8e8b8262fd9e685e4b53b46fd441
   react-native-quick-base64: a74c4b2607b9de016877a8edb776b6ac59785809
   react-native-quick-crypto: 125ea5401b6f022079c516ef65436a0e2416390d
   react-native-randombytes: 421f1c7d48c0af8dbcd471b0324393ebf8fe7846
@@ -2072,7 +2072,7 @@ SPEC CHECKSUMS:
   RNScreenshotPrevent: 4ce6044ecdb37694f68a0d7cbe81ccdc39c1bca3
   RNSha256: e1bc64e9e50b293d5282bb4caa1b2043931f1c9d
   RNShare: d82e10f6b7677f4b0048c23709bd04098d5aee6c
-  RNSVG: e451741721b9fd3db71b06aafe9335d09a189692
+  RNSVG: d956b40703d2292f808d57c9ee5452c46ac6b4b1
   RNTestFlight: 3419178faa8527ecfe803607fd338a3803f1fb0d
   RNVectorIcons: 845eda5c7819bd29699cafd0fc98c9d4afe28c96
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
