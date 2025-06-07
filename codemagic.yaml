@@ -166,7 +166,7 @@ workflows:
          cd ios && pod install
       - name: Set up code signing settings on Xcode project
         script: |
-          xcode-project use-profiles --profile $DOKWALLET_DIST_PROFILE_PATH
+          xcode-project use-profiles --profile $DOKWALLET_DIST_PROFILE_PATH --project  "$CM_BUILD_DIR/ios/coinswallet.xcodeproject"
       - name: Dok Wallet Set Version and build number
         script: |
           cd ios
@@ -185,7 +185,7 @@ workflows:
           agvtool new-marketing-version $KIMLWALLET_IOS_VERSION
       - name: KIML Wallet Build ipa for distribution
         script: |
-          xcode-project use-profiles --profile $KIMLWALLET_DIST_PROFILE_PATH
+          xcode-project use-profiles --profile $KIMLWALLET_DIST_PROFILE_PATH --project  "$CM_BUILD_DIR/ios/coinswallet.xcodeproject
           xcode-project build-ipa \
             --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
             --scheme "$KIMLWALLET_XCODE_SCHEME"
