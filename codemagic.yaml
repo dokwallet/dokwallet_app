@@ -166,7 +166,7 @@ workflows:
          cd ios && pod install
       - name: Set up code signing settings on Xcode project
         script: |
-          xcode-project use-profiles --profile $DOKWALLET_DIST_PROFILE_PATH --project  "$CM_BUILD_DIR/ios/coinswallet.xcodeproject" --archive-method=app-store
+          xcode-project use-profiles --profile $DOKWALLET_DIST_PROFILE_PATH --project  "$CM_BUILD_DIR/ios/coinswallet.xcodeproject" --archive-method=app-store --verbose
       - name: Dok Wallet Set Version and build number
         script: |
           cd ios
