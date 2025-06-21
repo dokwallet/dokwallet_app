@@ -100,28 +100,24 @@ workflows:
           failure: true
           success: true
 
-  react-native-ios:
+  dokwallet-react-native-ios:
     name: React Native iOS
     max_build_duration: 120
     instance_type: mac_mini_m2
 
+    integrations:
+      app_store_connect: Moreover4u2 LTD
     environment:
       ios_signing:
-        provisioning_profiles:
-          - dokwallet_prod_profile
-          - kimlwallet_prod_profile
-        certificates:
-          - dokwallet_certificate
-          - kimlwallet_certificate
+        distribution_type: app_store
+        bundle_identifier: com.dok.wallet
       groups:
         - ios_appstore_vars
         - common # common env variables
       vars:
-        XCODE_WORKSPACE: "coinswallet.xcworkspace"
-        DOKWALLET_XCODE_SCHEME: "coinswallet"
-        KIMLWALLET_XCODE_SCHEME: "kimlwallet"
-        DOKWALLET_APP_ID: 1533065700
-        KIMLWALLET_APP_ID: 6746929530
+        XCODE_WORKSPACE: "coinswallet.xcworkspace" # <-- Put the name of your Xcode workspace here
+        XCODE_SCHEME: "coinswallet" # <-- Put the name of your Xcode scheme here
+        APP_ID: 1533065700 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
       node: v20
       xcode: 16.0
       cocoapods: default
@@ -164,49 +160,16 @@ workflows:
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles --warn-only
-      - name: Dok Wallet Set Version and build number
+      - name: Set Version and build number
         script: |
           cd ios
           agvtool new-version -all $DOKWALLET_IOS_BUILD_NUMBER
           agvtool new-marketing-version $DOKWALLET_IOS_VERSION
-      - name: Dok Wallet Build ipa for distribution
+      - name: Build ipa for distribution
         script: |
           xcode-project build-ipa \
             --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
-            --scheme "$DOKWALLET_XCODE_SCHEME"
-
-      - name: KIML Wallet Set Version and build number
-        script: |
-          cd ios
-          agvtool new-version -all $KIMLWALLET_IOS_BUILD_NUMBER
-          agvtool new-marketing-version $KIMLWALLET_IOS_VERSION
-      - name: KIML Wallet Build ipa for distribution
-        script: |
-          xcode-project build-ipa \
-            --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
-            --scheme "$KIMLWALLET_XCODE_SCHEME"
-      - name: Publish Dok Wallet to App Store Connect
-        script: |
-          echo $DOKWALLET_AUTH_PRIVATE_KEY > DOKWALLET_PRIVATE_KEY.p8
-          app-store-connect publish \
-            --path build/ios/ipa/Dok_Wallet.ipa \
-            --app-id $DOKWALLET_APP_ID \
-            --private-key @file:DOKWALLET_PRIVATE_KEY.p8 \
-            --key-id $DOKWALLET_AUTH_KEY_ID \
-            --issuer-id $DOKWALLET_ISSUER_ID \
-            --submit-to-testflight
-
-      - name: Publish KIML Wallet to App Store Connect
-        script: |
-          echo $KIMLWALLET_AUTH_PRIVATE_KEY > KIMLWALLET_PRIVATE_KEY.p8
-          app-store-connect publish \
-            --path build/ios/ipa/KIML_Wallet.ipa \
-            --app-id $KIMLWALLET_APP_ID \
-            --private-key @file:KIMLWALLET_PRIVATE_KEY.p8 \
-            --key-id $KIMLWALLET_AUTH_KEY_ID \
-            --issuer-id $KIMLWALLET_ISSUER_ID \
-            --submit-to-testflight    
-
+            --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
@@ -219,3 +182,107 @@ workflows:
         notify:
           failure: true
           success: true
+
+      app_store_connect:
+        auth: integration
+
+        # Configuration related to TestFlight (optional)
+        # Note: This action is performed during post-processing.
+        submit_to_testflight: true
+
+        # Configuration related to App Store (optional)
+        # Note: This action is performed during post-processing.
+        submit_to_app_store: false
+  kimlwallet-react-native-ios:
+    name: React Native iOS
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+
+    integrations:
+      app_store_connect: KIML View LTD
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.kimlwallet
+      groups:
+        - ios_appstore_vars
+        - common # common env variables
+      vars:
+        XCODE_WORKSPACE: "coinswallet.xcworkspace" # <-- Put the name of your Xcode workspace here
+        XCODE_SCHEME: "kimlwallet" # <-- Put the name of your Xcode scheme here
+        APP_ID: 6746929530 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
+      node: v20
+      xcode: 16.0
+      cocoapods: default
+    scripts:
+      - name: Generate .env file
+        script: |
+          cat >> .env <<EOF
+          ETHERSCAN_API_KEY_1=$ETHERSCAN_API_KEY_1
+          ETHERSCAN_API_KEY_2=$ETHERSCAN_API_KEY_2
+          TRON_API_KEY_1=$TRON_API_KEY_1
+          TRON_API_KEY_2=$TRON_API_KEY_2
+          TRON_SCAN_API_KEY=$TRON_SCAN_API_KEY
+          BLOCK_CYPHER_API_KEY=$BLOCK_CYPHER_API_KEY
+          DOK_WALLET_BASE_URL=$DOK_WALLET_BASE_URL
+          COIN_MARKET_CAP_API_KEY_1=$COIN_MARKET_CAP_API_KEY_1
+          COIN_MARKET_CAP_API_KEY_2=$COIN_MARKET_CAP_API_KEY_2
+          COIN_MARKET_CAP_API_KEY_3=$COIN_MARKET_CAP_API_KEY_3
+          COIN_MARKET_CAP_API_KEY_4=$COIN_MARKET_CAP_API_KEY_4
+          MORALIS_API_KEY=$MORALIS_API_KEY
+          TON_SCAN_API_KEY=$TON_SCAN_API_KEY
+          ETHEREUM_POW_SCAN_API_KEY=$ETHEREUM_POW_SCAN_API_KEY
+          POLKADOT_SCAN_API_KEY=$POLKADOT_SCAN_API_KEY
+          COSMOS_API_KEY=$COSMOS_API_KEY
+          SOLANA_RPC_KEY=$SOLANA_RPC_KEY
+          BUGFENDER_APP_KEY=$BUGFENDER_APP_KEY
+          REDUX_KEYCHAIN_NAME=$REDUX_KEYCHAIN_NAME
+          REDUX_SHARED_PREFERENCE_NAME=$REDUX_SHARED_PREFERENCE_NAME
+          REDUX_KEY=$REDUX_KEY
+          BLOCKDAEMON_API_KEY=$BLOCKDAEMON_API_KEY
+          BLOCKFROST_API_KEY=$BLOCKFROST_API_KEY
+          DOKWALLET_WALLET_CONNECT_ID=$DOKWALLET_WALLET_CONNECT_ID
+          KIMLWALLET_WALLET_CONNECT_ID=$KIMLWALLET_WALLET_CONNECT_ID
+          EOF
+      - name: Install yarn dependencies
+        script: |
+          npm run git:update && yarn install
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios && pod install
+      - name: Set up code signing settings on Xcode project
+        script: |
+          xcode-project use-profiles --warn-only
+      - name: Set Version and build number
+        script: |
+          cd ios
+          agvtool new-version -all $KIMLWALLET_IOS_BUILD_NUMBER
+          agvtool new-marketing-version $KIMLWALLET_IOS_VERSION
+      - name: Build ipa for distribution
+        script: |
+          xcode-project build-ipa \
+            --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      slack:
+        channel: codemagic-dokwallet
+        notify_on_build_start: true
+        notify:
+          failure: true
+          success: true
+
+      app_store_connect:
+        auth: integration
+
+        # Configuration related to TestFlight (optional)
+        # Note: This action is performed during post-processing.
+        submit_to_testflight: true
+
+        # Configuration related to App Store (optional)
+        # Note: This action is performed during post-processing.
+        submit_to_app_store: false
