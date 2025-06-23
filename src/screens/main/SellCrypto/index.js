@@ -429,38 +429,35 @@ const SellCrypto = ({navigation}) => {
                     {isLoading ? (
                       <Loading />
                     ) : (
-                      cryptoProviders?.map((item, index) =>
-                        values?.selectedPaymentMethod?.value === 'apple_pay' &&
-                        item.title === 'Coinify' ? null : (
-                          <TouchableOpacity
-                            key={`cryptoProvider_${index}`}
-                            style={styles.btn}
-                            onPress={() => {
-                              onPressItem(item);
-                            }}>
-                            <View style={styles.imageBox}>
-                              <FastImage
-                                source={{uri: item.src}}
-                                style={styles.image}
-                              />
-                            </View>
-                            <View style={styles.btnBox}>
-                              <Text style={styles.btnTitle}>{item.title}</Text>
-                              <Text style={styles.btnCoins} numberOfLines={1}>
-                                {item?.fromAmount &&
-                                item?.toAmount &&
-                                values.selectedCoin
-                                  ? `${item.fromAmount} ${
-                                      values.selectedCoin?.options?.symbol
-                                    } ==> ${
-                                      currencySymbol[values.fiatCurrency]
-                                    }${item.toAmount}`
-                                  : ''}
-                              </Text>
-                            </View>
-                          </TouchableOpacity>
-                        ),
-                      )
+                      cryptoProviders?.map((item, index) => (
+                        <TouchableOpacity
+                          key={`cryptoProvider_${index}`}
+                          style={styles.btn}
+                          onPress={() => {
+                            onPressItem(item);
+                          }}>
+                          <View style={styles.imageBox}>
+                            <FastImage
+                              source={{uri: item.src}}
+                              style={styles.image}
+                            />
+                          </View>
+                          <View style={styles.btnBox}>
+                            <Text style={styles.btnTitle}>{item.title}</Text>
+                            <Text style={styles.btnCoins} numberOfLines={1}>
+                              {item?.fromAmount &&
+                              item?.toAmount &&
+                              values.selectedCoin
+                                ? `${item.fromAmount} ${
+                                    values.selectedCoin?.options?.symbol
+                                  } ==> ${currencySymbol[values.fiatCurrency]}${
+                                    item.toAmount
+                                  }`
+                                : ''}
+                            </Text>
+                          </View>
+                        </TouchableOpacity>
+                      ))
                     )}
                   </View>
                 )}
