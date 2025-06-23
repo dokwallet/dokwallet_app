@@ -28,7 +28,6 @@ import {
   addMinutes,
   isAfterCurrentDate,
   isNewerVersion,
-  validateNumber,
 } from 'dok-wallet-blockchain-networks/helper';
 import {getLockTime} from 'dok-wallet-blockchain-networks/redux/settings/settingsSelectors';
 import {
