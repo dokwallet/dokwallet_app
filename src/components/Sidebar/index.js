@@ -97,13 +97,11 @@ export default function Sidebar({navigation, route}) {
                   fontSize: 16,
                   marginVertical: -4,
                 }}>
-                Reset Wallet
+                Delete Account
               </Text>
             )}
-            // label="Reset Wallet"
-
             onPress={() => {
-              setModalList('Reset Wallet');
+              setModalList('Delete Account');
               setModal(true);
             }}
           />
@@ -460,33 +458,6 @@ export default function Sidebar({navigation, route}) {
             ),
           })}
         />
-        {/* /////////////////Reset//////////////////////// */}
-        {/* <Drawer.Screen
-          name="Reset Wallet"
-          component={ResetWallet}
-          options={({navigation}) => ({
-            headerTitleAlign: 'center',
-            headerLeft: () => (
-              <TouchableOpacity
-               style={{
-                  padding: 11,
-                  paddingLeft: isIpad ? 50 : 11,
-                }}
-                onPress={() => navigation.navigate('Home')}>
-                 <BackIcon
-                  width="22"
-                  height="18"
-                  fill={theme.borderActiveColor}
-                />
-              </TouchableOpacity>
-            ),
-            drawerIcon: ({focused}) => (
-              <TouchableOpacity onPress={focused && setModal(true)}>
-                <ResetWalletIcon fill={focused ? theme.background : '#989898'} />
-              </TouchableOpacity>
-            ),
-          })}
-        /> */}
         <Drawer.Screen
           name="Settings"
           component={Settings}

@@ -45,7 +45,7 @@ const ModalReset = ({visible, hideModal, navigation, page}) => {
   }, [page]);
 
   const handlerNo = () => {
-    if (list === 'Reset Wallet') {
+    if (list === 'Delete Account') {
       hideModal(false);
       navigation.navigate('Sidebar', {
         screen: 'Home',
@@ -56,18 +56,15 @@ const ModalReset = ({visible, hideModal, navigation, page}) => {
   };
 
   const handlerYes = () => {
-    if (list === 'Reset Wallet') {
+    if (list === 'Delete Account' || list === 'Forgot') {
       dispatch(resetWallet());
       hideModal(false);
-      navigation.reset({
-        index: 0,
-        routes: [{name: 'ResetWallet', params: {isFromOnBoarding: true}}],
-      });
-    } else if (list === 'Forgot') {
       dispatch(logOutSuccess());
-      dispatch(resetWallet());
       setTimeout(() => {
-        navigation.navigate('Registration');
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'CarouselCards'}],
+        });
       }, 200);
     } else {
       hideModal(false);
@@ -93,9 +90,10 @@ const ModalReset = ({visible, hideModal, navigation, page}) => {
       <View style={styles.infoList}>
         <Text style={styles.titleInfo}>{page}</Text>
         <Text style={styles.info}>
-          Please make sure you have a copy of 12/18/24-word seed phrase. You
-          will need it in order to restore your wallet. Without it you will NOT
-          be able to restore your wallet and you will lose access to your funds.
+          It will delete all wallets and password. Please make sure you have a
+          copy of 12/18/24-word seed phrase. You will need it in order to
+          restore your wallet. Without it you will NOT be able to restore your
+          wallet and you will lose access to your funds.
         </Text>
         <Text style={styles.info}>Are you sure you want to proceed?</Text>
       </View>
