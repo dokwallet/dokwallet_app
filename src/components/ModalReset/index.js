@@ -1,23 +1,15 @@
-import React, {useState, useEffect, useContext, useLayoutEffect} from 'react';
-import {
-  Dimensions,
-  TouchableOpacity,
-  View,
-  ActivityIndicator,
-} from 'react-native';
-import {Modal, Portal, Text, Provider} from 'react-native-paper';
-import {getUserPassword} from 'dok-wallet-blockchain-networks/redux/auth/authSelectors';
+import React, {useState, useEffect, useContext} from 'react';
+import {Dimensions, TouchableOpacity, View, TextInput} from 'react-native';
+import {Modal, Text} from 'react-native-paper';
 import {
   logOutSuccess,
-  logOutFailure,
   fingerprintAuthOut,
 } from 'dok-wallet-blockchain-networks/redux/auth/authSlice';
 import {ThemeContext} from 'theme/ThemeContext';
 import myStyles from './ModalResetStyles';
 import {resetWallet} from 'dok-wallet-blockchain-networks/redux/wallets/walletsSlice';
 import {useDispatch} from 'react-redux';
-
-// import {getLoading} from 'dok-wallet-blockchain-networks/redux/auth/authSelectors';
+import {useKeyboardHeight} from 'hooks/useKeyboardHeight';
 
 const WIDTH = Dimensions.get('window').width + 80;
 const {height: screenHeight} = Dimensions.get('window');
@@ -36,13 +28,25 @@ if (isIpad) {
 const ModalReset = ({visible, hideModal, navigation, page}) => {
   const {theme} = useContext(ThemeContext);
   const styles = myStyles(theme);
+  const [text, setText] = useState('');
+  const [keyboardOffset, setKeyboardOffset] = useState(0);
   const dispatch = useDispatch();
-  // const storePassword = useSelector(getUserPassword);
   const [list, setList] = useState('');
+  const keyboardHeight = useKeyboardHeight();
 
   useEffect(() => {
     setList(page);
   }, [page]);
+
+  // Keyboard event listeners
+  useEffect(() => {
+    const modalTop = (screenHeight - modalHeight) / 2;
+    const overlap = modalTop + modalHeight - (screenHeight - keyboardHeight);
+
+    if (overlap > 0) {
+      setKeyboardOffset(-overlap - 20); // Extra 20px padding
+    }
+  }, [keyboardHeight]);
 
   const handlerNo = () => {
     if (list === 'Delete Account') {
@@ -85,6 +89,7 @@ const ModalReset = ({visible, hideModal, navigation, page}) => {
         alignSelf: 'center',
         borderRadius: 10,
         height: modalHeight,
+        transform: [{translateY: keyboardOffset}], // Apply keyboard offset
       }}
       dismissable={false}>
       <View style={styles.infoList}>
@@ -95,8 +100,16 @@ const ModalReset = ({visible, hideModal, navigation, page}) => {
           restore your wallet. Without it you will NOT be able to restore your
           wallet and you will lose access to your funds.
         </Text>
-        <Text style={styles.info}>Are you sure you want to proceed?</Text>
+        <Text style={styles.info}>Write confirm to delete all wallets.</Text>
+        <TextInput
+          style={styles.inputStyle}
+          onChangeText={setText}
+          value={text}
+          placeholder={'Confirm'}
+          placeholderTextColor={theme.placeholderColor}
+        />
       </View>
+
       <View style={styles.btnList}>
         <View style={styles.learnBorder}>
           <TouchableOpacity style={styles.learnBox} onPress={() => handlerNo()}>
@@ -104,7 +117,13 @@ const ModalReset = ({visible, hideModal, navigation, page}) => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.learnBox} onPress={() => handlerYes()}>
+        <TouchableOpacity
+          style={[
+            styles.learnBox,
+            text.toLowerCase() !== 'confirm' && {opacity: 0.5},
+          ]}
+          onPress={() => handlerYes()}
+          disabled={text.toLowerCase() !== 'confirm'}>
           <Text style={styles.learnText}>Yes</Text>
         </TouchableOpacity>
       </View>
